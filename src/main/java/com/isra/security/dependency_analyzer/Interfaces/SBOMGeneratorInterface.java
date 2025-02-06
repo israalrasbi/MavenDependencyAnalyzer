@@ -1,4 +1,4 @@
 package com.isra.security.dependency_analyzer.Interfaces;
 
-public interface DependencyAnalyzerService {
+public interface SBOMGeneratorInterface {
 }
