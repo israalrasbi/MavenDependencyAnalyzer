@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @RestController
@@ -26,16 +27,11 @@ public class DependencyController {
     @PostMapping("generateBom")
     public ResponseEntity<String> generateBom(@RequestBody SBOMRequest sbomRequest){
         try {
-            // Call the service to generate BOM file from POM
             File bomFile = dependencyService.generateBomJson(sbomRequest);
-
-            if (!bomFile.exists() || bomFile.length() == 0) {
-                return ResponseEntity.status(500).body("Error: BOM file is empty or not created properly.");
-            }
-
             return ResponseEntity.ok("BOM file generated successfully: " + bomFile.getAbsolutePath());
+        } catch (FileNotFoundException e) {
+            return ResponseEntity.status(400).body("Error: " + e.getMessage());
         } catch (Exception e) {
-            e.printStackTrace();
             return ResponseEntity.status(500).body("Error generating BOM file: " + e.getMessage());
         }
     }
