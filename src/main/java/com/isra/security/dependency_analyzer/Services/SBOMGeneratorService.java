@@ -9,6 +9,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,10 @@ public class SBOMGeneratorService {
         try {
             //parsing the XML
             File pomFile = new File(pomXmlPath);
+            if (!pomFile.exists()) {
+                throw new FileNotFoundException("POM file not found at: " + pomXmlPath);
+            }
+
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(pomFile);
@@ -33,6 +38,10 @@ public class SBOMGeneratorService {
 
             //extract dependencies
             NodeList dependencies = doc.getElementsByTagName("dependency");
+            if (dependencies.getLength() == 0) {
+                throw new RuntimeException("No dependencies found in the POM file.");
+            }
+
 
             //loop through the dependencies
             for (int i = 0; i < dependencies.getLength(); i++) {
