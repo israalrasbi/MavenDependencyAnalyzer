@@ -11,7 +11,7 @@ public class DependencyService {
     SBOMGeneratorInterface sbomGeneratorInterface;
 
     public String generateBomJson(SBOMRequest sbomRequest){
-        return sbomGeneratorInterface.generateSBOMFromPOM(sbomRequest.getBomJson());
+        return sbomGeneratorInterface.generateSBOMFromPOM(sbomRequest.getPomXml());
     }
 
 }

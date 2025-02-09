@@ -6,7 +6,7 @@ import java.util.List;
 public class Project {
     private String projectName;
     private List<Dependency> dependencyList;
-    
+
     public String getProjectName() {
         return projectName;
     }
