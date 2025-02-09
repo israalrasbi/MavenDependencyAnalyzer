@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class TrackService {
+    /*
     @Autowired
     DependencyTrackClientInterface dependencyTrackClientInterface;
 
@@ -18,5 +19,5 @@ public class TrackService {
 
     public List<VulnerabilityResponse> getVulnerabilities(String projectName){
         return dependencyTrackClientInterface.getVulnerabilitiesByProjectName(projectName);
-    }
+    }*/
 }
