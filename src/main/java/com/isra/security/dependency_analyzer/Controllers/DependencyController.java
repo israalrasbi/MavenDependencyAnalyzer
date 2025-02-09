@@ -29,7 +29,10 @@ public class DependencyController {
             // Call the service to generate BOM file from POM
             File bomFile = dependencyService.generateBomJson(sbomRequest);
 
-            // Return the path of the BOM file or any success message
+            if (!bomFile.exists() || bomFile.length() == 0) {
+                return ResponseEntity.status(500).body("Error: BOM file is empty or not created properly.");
+            }
+
             return ResponseEntity.ok("BOM file generated successfully: " + bomFile.getAbsolutePath());
         } catch (Exception e) {
             e.printStackTrace();
