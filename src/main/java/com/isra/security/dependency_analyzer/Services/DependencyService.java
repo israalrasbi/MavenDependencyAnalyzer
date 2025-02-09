@@ -14,7 +14,13 @@ public class DependencyService {
     SBOMGeneratorService sbomGeneratorService;
 
     public File generateBomJson(SBOMRequest request){
-        return sbomGeneratorService.generateSBOMFromPOM(request.getPomXml());
+        //return sbomGeneratorService.generateSBOMFromPOM(request.getPomXml());
+        File bomFile = sbomGeneratorService.generateSBOMFromPOM(request.getPomXml());
+        if (!bomFile.exists() || bomFile.length() == 0) {
+            throw new RuntimeException("BOM file generation failed: File is empty or not created.");
+        }
+
+        return bomFile;
     }
 
 }
