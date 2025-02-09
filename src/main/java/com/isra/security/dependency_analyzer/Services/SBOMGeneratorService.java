@@ -9,6 +9,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,45 +17,58 @@ import java.util.List;
 public class SBOMGeneratorService {
 
     public File generateSBOMFromPOM(String pomXmlPath) {
-        try {
-            File pomFile = new File(pomXmlPath);
+        //build the JSON string manually
+        StringBuilder jsonOutput = new StringBuilder();
+        //start JSON array
+        jsonOutput.append("[\n");
 
-            // Create a DocumentBuilderFactory and parse the XML file
+        try {
+            //parsing the XML
+            File pomFile = new File(pomXmlPath);
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(pomFile);
-
-            // Normalize the document
+            //remove unnecessary whitespaces
             doc.getDocumentElement().normalize();
 
-            // Get all <dependency> nodes inside <dependencies>
+            //extract dependencies
             NodeList dependencies = doc.getElementsByTagName("dependency");
 
-            List<String> dependencyList = new ArrayList<>();
-
+            //loop through the dependencies
             for (int i = 0; i < dependencies.getLength(); i++) {
                 Node dependencyNode = dependencies.item(i);
+                //check if the node is element, to avoid processing text nodes or comments
                 if (dependencyNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element dependencyElement = (Element) dependencyNode;
 
-                    // Extract groupId, artifactId, and version
+                    //extract the data using getTagValue function
                     String groupId = getTagValue("groupId", dependencyElement);
                     String artifactId = getTagValue("artifactId", dependencyElement);
                     String version = getTagValue("version", dependencyElement);
 
-                    // Print results
-                    System.out.println("Dependency " + (i + 1) + ":");
-                    System.out.println("  GroupId: " + groupId);
-                    System.out.println("  ArtifactId: " + artifactId);
-                    System.out.println("  Version: " + version);
-                    System.out.println("-----------------------------------");
+                    //append dependency as JSON object
+                    jsonOutput.append(String.format(
+                            "  {\n    \"groupId\": \"%s\",\n    \"artifactId\": \"%s\",\n    \"version\": \"%s\"\n  }",
+                            groupId, artifactId, version
+                    ));
 
-                    // Store in a list (optional)
-                    dependencyList.add(groupId + ":" + artifactId + ":" + version);
+                    //add comma if it's not the last dependency
+                    if (i < dependencies.getLength() - 1) {
+                        jsonOutput.append(",");
+                    }
+                    jsonOutput.append("\n");
                 }
             }
+            //end JSON array
+            jsonOutput.append("]");
 
-            // Here, you can write the dependencies to bom.json if needed
+            //write the output to a file
+            File outputFile = new File("bom.json");
+            try (FileWriter fileWriter = new FileWriter(outputFile)) {
+                fileWriter.write(jsonOutput.toString());
+            }
+
+            System.out.println("SBOM saved to bom.json");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,13 +77,13 @@ public class SBOMGeneratorService {
         return new File("bom.json");
     }
 
-    // Helper function to get text content from XML tag
+    //helper function to get text content from XML tag
     private String getTagValue(String tag, Element element) {
         NodeList nodeList = element.getElementsByTagName(tag);
         if (nodeList != null && nodeList.getLength() > 0) {
             return nodeList.item(0).getTextContent();
         }
-        return "N/A"; // Return "N/A" if the tag is missing
+        //return null if missing
+        return "N/A";
     }
-
 }
