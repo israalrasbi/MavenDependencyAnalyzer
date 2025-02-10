@@ -59,7 +59,7 @@ public class SBOMGeneratorService {
                 writer.write(bomJson);
             }
 
-            return bomJson; 
+            return bomJson;
         } catch (Exception e) {
             throw new IOException("Failed to generate SBOM from pom.xml at path: " + pomFilePath, e);
         }

@@ -17,11 +17,8 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "dependency-analyzer")
 public class DependencyController {
-   /* @Autowired
-    private DependencyService dependencyService;
-
     @Autowired
-    private TrackService trackService;*/
+    private TrackService trackService;
 
     @Autowired
     private SBOMGeneratorService sbomGeneratorService;
