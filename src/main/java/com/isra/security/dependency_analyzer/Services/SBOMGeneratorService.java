@@ -19,23 +19,25 @@ import org.cyclonedx.model.Component;
 public class SBOMGeneratorService {
     public String generateSBOM(String pomFilePath) throws IOException {
         try {
-            // Read and parse the pom.xml
+            //read and parse the pom.xml
             File pomFile = new File(pomFilePath);
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(pomFile);
+            //remove unnecessary whitespaces
             doc.getDocumentElement().normalize();
 
-            // Extract dependencies
+            //extract dependencies, and save it to a list
             NodeList dependencies = doc.getElementsByTagName("dependency");
             Bom bom = new Bom();
 
+            //loop through the dependencies
             for (int i = 0; i < dependencies.getLength(); i++) {
                 String groupId = dependencies.item(i).getChildNodes().item(1).getTextContent();
                 String artifactId = dependencies.item(i).getChildNodes().item(3).getTextContent();
                 String version = dependencies.item(i).getChildNodes().item(5).getTextContent();
 
-                // Create CycloneDX component
+                //create CycloneDX component
                 Component component = new Component();
                 component.setType(Component.Type.LIBRARY);
                 component.setGroup(groupId);
@@ -43,21 +45,21 @@ public class SBOMGeneratorService {
                 component.setVersion(version);
                 component.setPurl("pkg:maven/" + groupId + "/" + artifactId + "@" + version);
 
-                // Add component to BOM
+                //add component to BOM
                 bom.addComponent(component);
             }
 
-            // Generate SBOM JSON
+            //generate SBOM JSON
             BomJsonGenerator bomJsonGenerator = (BomJsonGenerator) BomGeneratorFactory.createJson(CycloneDxSchema.Version.VERSION_14, bom);
             String bomJson = bomJsonGenerator.toJsonString();
 
-            // Save SBOM to a file
+            //save SBOM to a file, named bom.json
             File sbomFile = new File("bom.json");
             try (FileWriter writer = new FileWriter(sbomFile)) {
                 writer.write(bomJson);
             }
 
-            return bomJson; // Return the generated SBOM
+            return bomJson; 
         } catch (Exception e) {
             throw new IOException("Failed to generate SBOM from pom.xml at path: " + pomFilePath, e);
         }
