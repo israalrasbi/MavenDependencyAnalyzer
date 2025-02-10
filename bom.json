@@ -1,5 +1,21 @@
 {
   "bomFormat" : "CycloneDX",
   "specVersion" : "1.4",
-  "version" : 1
+  "version" : 1,
+  "components" : [
+    {
+      "group" : "org.springframework.boot",
+      "name" : "spring-boot-starter-web",
+      "version" : "3.2.1",
+      "purl" : "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.1",
+      "type" : "library"
+    },
+    {
+      "group" : "org.cyclonedx",
+      "name" : "cyclonedx-core-java",
+      "version" : "7.2.2",
+      "purl" : "pkg:maven/org.cyclonedx/cyclonedx-core-java@7.2.2",
+      "type" : "library"
+    }
+  ]
 }

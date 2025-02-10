@@ -26,13 +26,35 @@ import org.cyclonedx.model.Component;
 public class SBOMGeneratorService {
     public String generateSBOM(String pomFilePath) throws IOException {
         try {
-            // Create a BOM object
+            // Read and parse the pom.xml
+            File pomFile = new File(pomFilePath);
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(pomFile);
+            doc.getDocumentElement().normalize();
+
+            // Extract dependencies
+            NodeList dependencies = doc.getElementsByTagName("dependency");
             Bom bom = new Bom();
 
-            // Add dependencies manually (since PomParser doesn't exist)
-            // Here, you'd parse pom.xml to extract dependencies
+            for (int i = 0; i < dependencies.getLength(); i++) {
+                String groupId = dependencies.item(i).getChildNodes().item(1).getTextContent();
+                String artifactId = dependencies.item(i).getChildNodes().item(3).getTextContent();
+                String version = dependencies.item(i).getChildNodes().item(5).getTextContent();
 
-            // Use the BomJsonGeneratorFactory to create the generator
+                // Create CycloneDX component
+                Component component = new Component();
+                component.setType(Component.Type.LIBRARY);
+                component.setGroup(groupId);
+                component.setName(artifactId);
+                component.setVersion(version);
+                component.setPurl("pkg:maven/" + groupId + "/" + artifactId + "@" + version);
+
+                // Add component to BOM
+                bom.addComponent(component);
+            }
+
+            // Generate SBOM JSON
             BomJsonGenerator bomJsonGenerator = (BomJsonGenerator) BomGeneratorFactory.createJson(CycloneDxSchema.Version.VERSION_14, bom);
             String bomJson = bomJsonGenerator.toJsonString();
 
