@@ -22,20 +22,7 @@ public class DependencyController {
 
     @Autowired
     private SBOMGeneratorService sbomGeneratorService;
-
-    /*
-    @PostMapping("generateBom")
-    public ResponseEntity<String> generateBom(@RequestBody SBOMRequest sbomRequest){
-        try {
-            File bomFile = dependencyService.generateBomJson(sbomRequest);
-            return ResponseEntity.ok("BOM file generated successfully: " + bomFile.getAbsolutePath());
-        } catch (FileNotFoundException e) {
-            return ResponseEntity.status(400).body("Error: " + e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.status(500).body("Error generating BOM file: " + e.getMessage());
-        }
-    }*/
-
+    
     @GetMapping("/generateSbom")
     public ResponseEntity<String> generateSBOM(@RequestParam("path") String pomFilePath) {
         try {
