@@ -8,7 +8,7 @@ import java.io.File;
 
 @Service
 public class DependencyService {
-
+/*
 
     @Autowired
     SBOMGeneratorService sbomGeneratorService;
@@ -20,6 +20,6 @@ public class DependencyService {
         }
 
         return bomFile;
-    }
+    }*/
 
 }
