@@ -11,13 +11,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
+
 
 @Service
 public class SBOMGeneratorService {
 
-    public File generateSBOMFromPOM(String pomXmlPath) throws Exception { 
+    public File generateSBOMFromPOM(String pomXmlPath) throws Exception {
         //build the JSON string manually
         StringBuilder jsonOutput = new StringBuilder();
         //start JSON array
