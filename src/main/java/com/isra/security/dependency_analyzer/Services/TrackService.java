@@ -61,11 +61,11 @@ public class TrackService {
         return response.getBody();
     }
 
-    private String readFile(String filePath) {
+    /*private String readFile(String filePath) {
         try {
             return Files.readString(Paths.get(filePath));
         } catch (IOException e) {
             throw new RuntimeException("Error reading SBOM file: " + filePath, e);
         }
-    }
+    }*/
 }
