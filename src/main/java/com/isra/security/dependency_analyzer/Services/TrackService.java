@@ -11,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -59,6 +60,15 @@ public class TrackService {
         );
         //return the list of vulnerabilities
         return response.getBody();
+    }
+
+    private String encodeFileToBase64(String filePath) {
+        try {
+            byte[] fileContent = Files.readAllBytes(Paths.get(filePath));
+            return Base64.getEncoder().encodeToString(fileContent);
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading or encoding file: " + filePath, e);
+        }
     }
 
     /*private String readFile(String filePath) {
