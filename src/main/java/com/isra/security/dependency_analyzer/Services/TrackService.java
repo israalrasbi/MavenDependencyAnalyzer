@@ -47,4 +47,12 @@ public class TrackService {
         // Send PUT request to Dependency-Track API
         return restTemplate.exchange(apiUrl, HttpMethod.PUT, requestEntity, String.class);
     }
+
+    private String readFile(String filePath) {
+        try {
+            return Files.readString(Paths.get(filePath));
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading SBOM file: " + filePath, e);
+        }
+    }
 }
