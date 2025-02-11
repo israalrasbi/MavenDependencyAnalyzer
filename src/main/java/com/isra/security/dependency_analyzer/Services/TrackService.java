@@ -14,7 +14,7 @@ import java.util.Map;
 public class TrackService {
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public ResponseEntity<String> uploadSbom(String projectUuid, String bomJson) {
+    public ResponseEntity<String> uploadSbomFromFile(String projectUuid, String filePath){
         String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/sendSbom";
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
 

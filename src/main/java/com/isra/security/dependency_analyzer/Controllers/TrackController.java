@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class TrackController {
     @Autowired
     private TrackService trackService;
-    
+
     @PostMapping("/upload-sbom")
     public ResponseEntity<String> uploadSbom(@RequestParam String projectUuid, @RequestBody String bomJson) {
         return trackService.uploadSbom(projectUuid, bomJson);
