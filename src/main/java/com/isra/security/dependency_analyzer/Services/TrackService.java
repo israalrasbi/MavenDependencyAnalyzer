@@ -19,17 +19,11 @@ import java.util.Map;
 
 @Service
 public class TrackService {
-    @Value("${dependency.track.api.url}")
-    private String dependencyTrackApiUrl;
-
-    @Value("${dependency.track.api.key}")
-    private String apiKey;
-
     private RestTemplate restTemplate;
 
     public void uploadSbom(String bomJson) {
-        String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/bom"; // API URL
-        String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY"); // API Key
+        String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/bom";
+        String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
 
         RestTemplate restTemplate = new RestTemplate();
 
