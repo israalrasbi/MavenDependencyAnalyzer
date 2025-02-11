@@ -1,20 +1,13 @@
 package com.isra.security.dependency_analyzer.Services;
 
-import com.isra.security.dependency_analyzer.DTOs.VulnerabilityResponse;
-import com.isra.security.dependency_analyzer.Interfaces.DependencyTrackClientInterface;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import org.springframework.http.HttpHeaders;
-import java.util.Base64;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
