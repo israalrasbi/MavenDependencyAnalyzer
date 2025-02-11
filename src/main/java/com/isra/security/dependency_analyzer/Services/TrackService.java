@@ -7,6 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +21,14 @@ public class TrackService {
     public ResponseEntity<String> uploadSbomFromFile(String projectUuid, String filePath){
         String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/sendSbom";
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
+
+        //Read the SBOM file as a string
+        String bomJson;
+        try {
+            bomJson = Files.readString(Paths.get(filePath));
+        } catch (IOException e) {
+            throw new RuntimeException("Error reading SBOM file: " + filePath, e);
+        }
 
         // Create headers
         HttpHeaders headers = new HttpHeaders();
