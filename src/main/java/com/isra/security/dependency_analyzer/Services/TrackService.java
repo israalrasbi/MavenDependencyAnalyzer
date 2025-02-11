@@ -28,11 +28,13 @@ public class TrackService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("X-Api-Key", apiKey);
 
+        // Encode file content in Base64
+        String encodedBom = encodeFileToBase64(filePath);
         //create a request body
         Map<String, Object> requestBody = Map.of(
                 "project", projectUuid,
                 //call readFile function
-                "bom", readFile(filePath),
+                "bom", encodedBom,
                 "autoCreate", true
         );
 
