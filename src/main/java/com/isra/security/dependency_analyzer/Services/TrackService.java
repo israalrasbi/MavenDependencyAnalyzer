@@ -64,7 +64,10 @@ public class TrackService {
                 apiUrl, HttpMethod.GET, entity, new ParameterizedTypeReference<>() {}
         );
         //return the list of vulnerabilities
-        return response.getBody();
+        List<Map<String, Object>> vulnerabilities = response.getBody();
+        //call the saveToFile function
+        saveToFile(vulnerabilities);
+        return vulnerabilities;
     }
 
     private String encodeFileToBase64(String filePath) {
