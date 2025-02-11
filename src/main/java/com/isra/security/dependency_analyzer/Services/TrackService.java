@@ -9,15 +9,5 @@ import java.util.List;
 
 @Service
 public class TrackService {
-    /*
-    @Autowired
-    DependencyTrackClientInterface dependencyTrackClientInterface;
-
-    public List<VulnerabilityResponse> analyzeBOM(String bomJson){
-        return dependencyTrackClientInterface.analyze(bomJson);
-    }
-
-    public List<VulnerabilityResponse> getVulnerabilities(String projectName){
-        return dependencyTrackClientInterface.getVulnerabilitiesByProjectName(projectName);
-    }*/
+   
 }
