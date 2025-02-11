@@ -19,7 +19,7 @@ import java.util.Map;
 
 @Service
 public class TrackService {
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate = new RestTemplate();
 
     public void uploadSbom(String bomJson) {
         String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/bom";
