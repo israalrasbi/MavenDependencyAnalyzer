@@ -30,7 +30,6 @@ public class TrackService {
         //create a request body
         Map<String, Object> requestBody = Map.of(
                 "project", projectUuid,
-                "bom", readFile(filePath),  // Reads the SBOM file
                 //call readFile function
                 "bom", readFile(filePath),
                 "autoCreate", true
