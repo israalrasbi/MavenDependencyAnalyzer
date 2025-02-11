@@ -1,5 +1,6 @@
 package com.isra.security.dependency_analyzer.Services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -8,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.HttpHeaders;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -70,6 +73,19 @@ public class TrackService {
             return Base64.getEncoder().encodeToString(fileContent);
         } catch (IOException e) {
             throw new RuntimeException("Error reading or encoding file: " + filePath, e);
+        }
+    }
+
+    private void saveToFile(List<Map<String, Object>> vulnerabilities) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            //ensure the directory exists
+            Files.createDirectories(Paths.get("output"));
+
+            //write JSON data to a file
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("output/vulnerabilities.json"), vulnerabilities);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
