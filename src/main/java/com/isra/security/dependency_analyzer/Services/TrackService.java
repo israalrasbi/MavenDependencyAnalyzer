@@ -22,24 +22,17 @@ public class TrackService {
         String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/sendSbom";
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
 
-        //Read the SBOM file as a string
-        String bomJson;
-        try {
-            bomJson = Files.readString(Paths.get(filePath));
-        } catch (IOException e) {
-            throw new RuntimeException("Error reading SBOM file: " + filePath, e);
-        }
-
         // Create headers
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("X-Api-Key", apiKey);
 
         // Create request body
-        Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("project", projectUuid);
-        requestBody.put("bom", bomJson);
-        requestBody.put("autoCreate", true);
+        Map<String, Object> requestBody = Map.of(
+                "project", projectUuid,
+                "bom", readFile(filePath),  // Reads the SBOM file
+                "autoCreate", true
+        );
 
         // Create HTTP request entity
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
