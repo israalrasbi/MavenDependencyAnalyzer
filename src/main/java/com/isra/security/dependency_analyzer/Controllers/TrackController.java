@@ -11,7 +11,7 @@ public class TrackController {
     @Autowired
     private TrackService trackService;
 
-    @PostMapping("/upload-sbom")
+    @PostMapping("/uploadSbom")
     public ResponseEntity<String> uploadSbom(@RequestParam String projectUuid, @RequestParam String filePath) {
         return trackService.uploadSbomFromFile(projectUuid, filePath);
     }
