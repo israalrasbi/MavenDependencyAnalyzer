@@ -22,7 +22,7 @@ public class TrackService {
     private final RestTemplate restTemplate = new RestTemplate();
 
     public ResponseEntity<String> uploadSbom(String projectUuid, String bomJson) {
-        String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/api/v1/bom";
+        String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/sendSbom";
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
 
         // Create headers
