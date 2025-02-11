@@ -12,7 +12,7 @@ public class TrackController {
     private TrackService trackService;
 
     @PostMapping("/upload-sbom")
-    public ResponseEntity<String> uploadSbom(@RequestParam String projectUuid, @RequestBody String bomJson) {
-        return trackService.uploadSbom(projectUuid, bomJson);
+    public ResponseEntity<String> uploadSbom(@RequestParam String projectUuid, @RequestParam String filePath) {
+        return trackService.uploadSbomFromFile(projectUuid, filePath);
     }
 }
