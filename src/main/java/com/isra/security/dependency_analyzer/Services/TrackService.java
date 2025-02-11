@@ -28,7 +28,7 @@ public class TrackService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("X-Api-Key", apiKey);
 
-        // Encode file content in Base64
+        //encode file content in Base64
         String encodedBom = encodeFileToBase64(filePath);
         //create a request body
         Map<String, Object> requestBody = Map.of(
@@ -72,12 +72,4 @@ public class TrackService {
             throw new RuntimeException("Error reading or encoding file: " + filePath, e);
         }
     }
-
-    /*private String readFile(String filePath) {
-        try {
-            return Files.readString(Paths.get(filePath));
-        } catch (IOException e) {
-            throw new RuntimeException("Error reading SBOM file: " + filePath, e);
-        }
-    }*/
 }
