@@ -22,22 +22,24 @@ public class TrackService {
         String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/api/v1/bom";
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
 
-        // Create headers
+        //create http header
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("X-Api-Key", apiKey);
 
-        // Create request body
+        //create a request body
         Map<String, Object> requestBody = Map.of(
                 "project", projectUuid,
                 "bom", readFile(filePath),  // Reads the SBOM file
+                //call readFile function
+                "bom", readFile(filePath),
                 "autoCreate", true
         );
 
-        // Create HTTP request entity
+        //create HTTP request entity
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
 
-        // Send PUT request to Dependency-Track API
+        //send PUT request to Dependency-Track API
         return restTemplate.exchange(apiUrl, HttpMethod.PUT, requestEntity, String.class);
     }
 
@@ -45,16 +47,19 @@ public class TrackService {
         String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/api/v1/finding/project/" + projectUuid;
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
 
+        //create http header
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-Api-Key", apiKey);
 
+        //create HTTP entity
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
+        //send GET request to Dependency-Track API
         ResponseEntity<List<Map<String, Object>>> response = restTemplate.exchange(
                 apiUrl, HttpMethod.GET, entity, new ParameterizedTypeReference<>() {}
         );
-
-        return response.getBody();  // Returns the list of vulnerabilities
+        //return the list of vulnerabilities
+        return response.getBody();
     }
 
     private String readFile(String filePath) {
