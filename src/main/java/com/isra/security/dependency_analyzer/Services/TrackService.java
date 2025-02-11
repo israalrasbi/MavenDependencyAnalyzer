@@ -21,31 +21,25 @@ import java.util.Map;
 public class TrackService {
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public void uploadSbom(String bomJson) {
-        String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/bom";
+    public ResponseEntity<String> uploadSbom(String projectUuid, String bomJson) {
+        String apiUrl = System.getenv("DEPENDENCY_TRACK_API_URL") + "/api/v1/bom";
         String apiKey = System.getenv("DEPENDENCY_TRACK_API_KEY");
-
-        RestTemplate restTemplate = new RestTemplate();
 
         // Create headers
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("X-Api-Key", apiKey);
 
-        // Create body
+        // Create request body
         Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("project", "your_project_uuid_here"); // Replace with actual project UUID
+        requestBody.put("project", projectUuid);
         requestBody.put("bom", bomJson);
         requestBody.put("autoCreate", true);
 
-        // Create HTTP request
+        // Create HTTP request entity
         HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(requestBody, headers);
 
-        // Send POST request
-        ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.PUT, requestEntity, String.class);
-
-        // Print response
-        System.out.println("Response: " + response.getStatusCode());
-        System.out.println("Body: " + response.getBody());
+        // Send PUT request to Dependency-Track API
+        return restTemplate.exchange(apiUrl, HttpMethod.PUT, requestEntity, String.class);
     }
 }
