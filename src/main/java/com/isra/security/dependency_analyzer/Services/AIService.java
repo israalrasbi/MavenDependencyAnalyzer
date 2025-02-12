@@ -23,12 +23,18 @@ public class AIService {
             // Create prompt
             String prompt = "Analyze the following vulnerabilities and suggest how to fix them:\n" + vulnerabilities;
 
-            // Send to OpenAI
-            return chatClient.call(prompt);
+            // Call Spring AI ChatClient
+            return chatClient.prompt()
+                    .user(prompt)
+                    .call()  // Get CallResponseSpec
+                    .chatResponse()  // Get ChatResponse
+                    .getResults().get(0).getOutput().getContent(); // Extract response text
         } catch (IOException e) {
             e.printStackTrace();
             return "Error reading the vulnerability file.";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error processing AI response.";
         }
     }
-
 }
