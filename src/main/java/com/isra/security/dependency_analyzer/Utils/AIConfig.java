@@ -21,4 +21,5 @@ public class AIConfig {
                 .model(model)
                 .build();
     }*/
+
 }
