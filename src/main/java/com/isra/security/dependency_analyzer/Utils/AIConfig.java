@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class AIConfig {
+    /*
     @Value("${spring.ai.openai.api-key}")
     private String apiKey;
 
     @Value("${spring.ai.openai.model}")
     private String model;
 
-   /* @Bean
+    @Bean
     public ChatClient chatClient() {
         return ChatClient.builder()
                 .apiKey(apiKey)
