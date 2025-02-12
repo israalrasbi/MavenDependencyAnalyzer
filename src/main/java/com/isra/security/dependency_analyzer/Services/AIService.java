@@ -15,6 +15,11 @@ public class AIService {
 
     private static final String FILE_PATH = "output/vulnerabilities.json";
 
+    @Autowired
+    public AIService(ChatClient chatClient) {
+        this.chatClient = chatClient;
+    }
+    
     public String analyzeVulnerabilities() {
         try {
             // Read file content
