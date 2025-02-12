@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 
 @Service
 public class AIService {
+    /*
     @Autowired
     private ChatClient chatClient;
 
@@ -41,5 +42,5 @@ public class AIService {
             e.printStackTrace();
             return "Error processing AI response.";
         }
-    }
+    }*/
 }
