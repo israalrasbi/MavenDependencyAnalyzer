@@ -1,7 +1,6 @@
 package com.isra.security.dependency_analyzer.Utils;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,5 +21,6 @@ public class AIConfig {
                 .model(model)
                 .build();
     }*/
+
 
 }
