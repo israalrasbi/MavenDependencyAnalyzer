@@ -34,8 +34,13 @@ public class AIController {
     @GetMapping("/analyze")
     public String analyze(@RequestParam(value = "message", defaultValue = "Tell me the best programming language") String message) {
         return aiService.runDeepseekR1(message);
-    }*/
+    }
 
+    private ChatClient chatClient;
+
+    public AIController(ChatClient.Builder chatClient) {
+        this.chatClient = chatClient.build();
+    }*/
     private ChatClient chatClient;
 
     public AIController(ChatClient.Builder chatClient) {
@@ -63,6 +68,7 @@ public class AIController {
                 .stream()
                 .content();
     }
+
 
     @Autowired
     private AIService aiService;
