@@ -46,29 +46,7 @@ public class AIService {
         }
     }*/
 
-    public String runDeepseekR1(String inputMessage) {
-        try {
-            // Prepare the command to run the Ollama model
-            String command = "ollama run deepseek-r1 --prompt " + inputMessage;
 
-            // Execute the command
-            Process process = Runtime.getRuntime().exec(command);
 
-            // Capture the output of the model
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            StringBuilder output = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                output.append(line).append("\n");
-            }
 
-            // Close the reader
-            reader.close();
-
-            return output.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "Error running Ollama model";
-        }
-    }
 }
