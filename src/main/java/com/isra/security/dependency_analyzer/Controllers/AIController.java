@@ -37,7 +37,7 @@ public class AIController {
         this.chatClient = chatClient.build();
     }
 
-    @GetMapping("/chat")
+    @GetMapping("/{chat}")
     public ResponseEntity<String> promptWithPathVariable(@PathVariable String chat) {
         try {
             String response = chatClient
@@ -50,7 +50,7 @@ public class AIController {
         }
     }
 
-    @GetMapping("/stream/chat")
+    @GetMapping("/stream/{chat}")
     public Flux<String> streamChat(@PathVariable String chat) {
         return chatClient
                 .prompt()
