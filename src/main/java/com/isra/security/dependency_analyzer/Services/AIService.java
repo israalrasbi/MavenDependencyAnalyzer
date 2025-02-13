@@ -45,6 +45,36 @@ public class AIService {
             return "Error processing AI response.";
         }
     }*/
+    public String analyzeVulnerabilities(String jsonContent) {
+        // Send the JSON content to the AI model for analysis
+        ChatClient chatClient = new ChatClient() {
+            @Override
+            public ChatClientRequestSpec prompt() {
+                return null;
+            }
+
+            @Override
+            public ChatClientRequestSpec prompt(String content) {
+                return null;
+            }
+
+            @Override
+            public ChatClientRequestSpec prompt(Prompt prompt) {
+                return null;
+            }
+
+            @Override
+            public Builder mutate() {
+                return null;
+            }
+        };
+        String response = chatClient
+                .prompt("Analyze the following vulnerabilities and provide feedback: " + jsonContent)
+                .call()
+                .content();
+        return response;
+    }
+
 
 
 
