@@ -16,8 +16,8 @@ public class AIService {
     private final ChatClient chatClient;
 
     @Autowired
-    public AIService(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    public AIService(ChatClient.Builder chatClient) {
+        this.chatClient = chatClient.build();
     }
     public String analyzeVulnerabilities(String jsonContent) {
         return chatClient
