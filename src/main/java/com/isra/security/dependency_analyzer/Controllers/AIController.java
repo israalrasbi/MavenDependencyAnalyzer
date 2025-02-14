@@ -44,6 +44,7 @@ public class AIController {
     private ChatClient chatClient;
 
     public AIController(ChatClient.Builder chatClient) {
+
         this.chatClient = chatClient.build();
     }
 
