@@ -1,15 +1,15 @@
 [ {
   "component" : {
-    "uuid" : "ec74f367-7167-4ee5-ae43-d4838b88bee6",
+    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
-    "project" : "7520f22c-a05d-4a88-a6be-fc033744cd25",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
     "latestVersion" : "2.18.2"
   },
   "vulnerability" : {
-    "uuid" : "aa3eebc5-d01c-4916-a30c-62c085bb96d4",
+    "uuid" : "ae08f3a0-4df7-4825-9036-bb6f13b62279",
     "source" : "NVD",
     "vulnId" : "CVE-2019-12086",
     "description" : "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x before 2.9.9. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint, the service has the mysql-connector-java jar (8.0.14 or earlier) in the classpath, and an attacker can host a crafted MySQL server reachable by the victim, an attacker can send a crafted JSON message that allows them to read arbitrary local files on the server. This occurs because of missing com.mysql.cj.jdbc.admin.MiniAdmin validation.",
@@ -17,8 +17,6 @@
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
-    "epssScore" : 0.00307,
-    "epssPercentile" : 0.69818,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -32,32 +30,29 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739287572801,
+    "attributedOn" : 1739552526190,
     "alternateIdentifier" : "CVE-2019-12086",
     "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2019-12086?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
   },
-  "matrix" : "7520f22c-a05d-4a88-a6be-fc033744cd25:ec74f367-7167-4ee5-ae43-d4838b88bee6:aa3eebc5-d01c-4916-a30c-62c085bb96d4"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:ae08f3a0-4df7-4825-9036-bb6f13b62279"
 }, {
   "component" : {
-    "uuid" : "ec74f367-7167-4ee5-ae43-d4838b88bee6",
+    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
-    "project" : "7520f22c-a05d-4a88-a6be-fc033744cd25",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
     "latestVersion" : "2.18.2"
   },
   "vulnerability" : {
-    "uuid" : "c63d7fa8-b85d-454e-a328-2948a02b1e01",
+    "uuid" : "76438adb-37f4-4faa-ba40-8d50d74150fe",
     "source" : "NVD",
     "vulnId" : "CVE-2020-25649",
     "description" : "A flaw was found in FasterXML Jackson Databind, where it did not have entity expansion secured properly. This flaw allows vulnerability to XML external entity (XXE) attacks. The highest threat from this vulnerability is data integrity.",
-    "cvssV2BaseScore" : 5.0,
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
-    "epssScore" : 0.00247,
-    "epssPercentile" : 0.64298,
     "cweId" : 611,
     "cweName" : "Improper Restriction of XML External Entity Reference",
     "cwes" : [ {
@@ -71,32 +66,29 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739287572833,
+    "attributedOn" : 1739552526248,
     "alternateIdentifier" : "CVE-2020-25649",
     "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2020-25649?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
   },
-  "matrix" : "7520f22c-a05d-4a88-a6be-fc033744cd25:ec74f367-7167-4ee5-ae43-d4838b88bee6:c63d7fa8-b85d-454e-a328-2948a02b1e01"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:76438adb-37f4-4faa-ba40-8d50d74150fe"
 }, {
   "component" : {
-    "uuid" : "ec74f367-7167-4ee5-ae43-d4838b88bee6",
+    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
-    "project" : "7520f22c-a05d-4a88-a6be-fc033744cd25",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
     "latestVersion" : "2.18.2"
   },
   "vulnerability" : {
-    "uuid" : "18ae0323-1ec3-4a41-8e26-f713a0f821ef",
+    "uuid" : "4e9e206b-09dc-4fe4-a050-fbdc2157d9cd",
     "source" : "NVD",
     "vulnId" : "CVE-2020-36518",
-    "description" : "jackson-databind before 2.13.0 allows a Java StackOverflow exception and denial of service via a large depth of nested objects.",
-    "cvssV2BaseScore" : 5.0,
+    "description" : "jackson-databind before 2.13.0 allows a Java StackOverflow exception and denial of service via a large depth of nested objects.\n\nSonatype's research suggests that this CVE's details differ from those defined at NVD. See https://ossindex.sonatype.org/vulnerability/CVE-2020-36518 for details",
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
-    "epssScore" : 0.00482,
-    "epssPercentile" : 0.75914,
     "cweId" : 787,
     "cweName" : "Out-of-bounds Write",
     "cwes" : [ {
@@ -110,31 +102,29 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739287572860,
+    "attributedOn" : 1739552526291,
     "alternateIdentifier" : "CVE-2020-36518",
     "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2020-36518?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
   },
-  "matrix" : "7520f22c-a05d-4a88-a6be-fc033744cd25:ec74f367-7167-4ee5-ae43-d4838b88bee6:18ae0323-1ec3-4a41-8e26-f713a0f821ef"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
 }, {
   "component" : {
-    "uuid" : "ec74f367-7167-4ee5-ae43-d4838b88bee6",
+    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
-    "project" : "7520f22c-a05d-4a88-a6be-fc033744cd25",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
     "latestVersion" : "2.18.2"
   },
   "vulnerability" : {
-    "uuid" : "f5fdae61-61c6-4988-aa6a-cbfe5c36cb2d",
+    "uuid" : "a23e6840-59a6-4c5d-ade6-cf5a94abc8dc",
     "source" : "NVD",
     "vulnId" : "CVE-2022-42003",
     "description" : "In FasterXML jackson-databind before versions 2.13.4.1 and 2.12.17.1, resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled.",
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
-    "epssScore" : 0.0029,
-    "epssPercentile" : 0.68941,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -148,31 +138,29 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739287572886,
+    "attributedOn" : 1739552526325,
     "alternateIdentifier" : "CVE-2022-42003",
     "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2022-42003?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
   },
-  "matrix" : "7520f22c-a05d-4a88-a6be-fc033744cd25:ec74f367-7167-4ee5-ae43-d4838b88bee6:f5fdae61-61c6-4988-aa6a-cbfe5c36cb2d"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
 }, {
   "component" : {
-    "uuid" : "ec74f367-7167-4ee5-ae43-d4838b88bee6",
+    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
-    "project" : "7520f22c-a05d-4a88-a6be-fc033744cd25",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
     "latestVersion" : "2.18.2"
   },
   "vulnerability" : {
-    "uuid" : "4ca90743-5b41-4f9b-9105-3ee96a9c1f02",
+    "uuid" : "19d58e24-80c2-4228-8785-8feb9efc3028",
     "source" : "NVD",
     "vulnId" : "CVE-2022-42004",
     "description" : "In FasterXML jackson-databind before 2.13.4, resource exhaustion can occur because of a lack of a check in BeanDeserializer._deserializeFromArray to prevent use of deeply nested arrays. An application is vulnerable only with certain customized choices for deserialization.",
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
-    "epssScore" : 0.00289,
-    "epssPercentile" : 0.68905,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -186,31 +174,29 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739287572911,
+    "attributedOn" : 1739552526380,
     "alternateIdentifier" : "CVE-2022-42004",
     "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2022-42004?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
   },
-  "matrix" : "7520f22c-a05d-4a88-a6be-fc033744cd25:ec74f367-7167-4ee5-ae43-d4838b88bee6:4ca90743-5b41-4f9b-9105-3ee96a9c1f02"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:19d58e24-80c2-4228-8785-8feb9efc3028"
 }, {
   "component" : {
-    "uuid" : "004aea5e-e11b-4863-9892-1db91299b256",
+    "uuid" : "e0a3839d-cf4c-4468-a9f7-7656270d4bc3",
     "name" : "commons-text",
     "group" : "org.apache.commons",
     "version" : "1.5",
     "purl" : "pkg:maven/org.apache.commons/commons-text@1.5",
-    "project" : "7520f22c-a05d-4a88-a6be-fc033744cd25",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
     "latestVersion" : "1.13.0"
   },
   "vulnerability" : {
-    "uuid" : "2d0a14e7-1f03-4102-8304-8b538727af3f",
+    "uuid" : "c5bde492-a926-4703-a10f-f6bbf2372251",
     "source" : "NVD",
     "vulnId" : "CVE-2022-42889",
     "description" : "Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is \"${prefix:name}\", where \"prefix\" is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. Starting with version 1.5 and continuing through 1.9, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are: - \"script\" - execute expressions using the JVM script execution engine (javax.script) - \"dns\" - resolve dns records - \"url\" - load values from urls, including from remote servers Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used. Users are recommended to upgrade to Apache Commons Text 1.10.0, which disables the problematic interpolators by default.",
     "cvssV3BaseScore" : 9.8,
     "severity" : "CRITICAL",
     "severityRank" : 0,
-    "epssScore" : 0.97318,
-    "epssPercentile" : 0.99948,
     "cweId" : 94,
     "cweName" : "Improper Control of Generation of Code ('Code Injection')",
     "cwes" : [ {
@@ -224,9 +210,9 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739287572948,
+    "attributedOn" : 1739552526432,
     "alternateIdentifier" : "CVE-2022-42889",
     "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2022-42889?component-type=maven&component-name=org.apache.commons%2Fcommons-text&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
   },
-  "matrix" : "7520f22c-a05d-4a88-a6be-fc033744cd25:004aea5e-e11b-4863-9892-1db91299b256:2d0a14e7-1f03-4102-8304-8b538727af3f"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:e0a3839d-cf4c-4468-a9f7-7656270d4bc3:c5bde492-a926-4703-a10f-f6bbf2372251"
 } ]
