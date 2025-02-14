@@ -18,7 +18,7 @@ public class AIController {
     @Autowired
     private AIService aiService;
 
-    @PostMapping("/analyze-vulnerabilities")
+    @PostMapping("/analyzeVulnerabilities")
     public ResponseEntity<String> analyzeVulnerabilities(@RequestParam("filePath") String filePath) {
         try {
             // Ensure the path points to vulnerabilities.json
