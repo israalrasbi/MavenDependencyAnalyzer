@@ -25,4 +25,8 @@ public class AIService {
                 .call()
                 .content();
     }
+
+    public String readVulnerabilitiesFile(String filePath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filePath)));
+    }
 }
