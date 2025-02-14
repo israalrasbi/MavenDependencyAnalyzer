@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 @RestController
 @RequestMapping(value = "ai")
 public class AIController {
+    /*
     private ChatClient chatClient;
 
     public AIController(ChatClient.Builder chatClient) {
@@ -41,7 +42,7 @@ public class AIController {
                 .user(chat)
                 .stream()
                 .content();
-    }
+    }*/
 
 
     @Autowired
@@ -50,11 +51,11 @@ public class AIController {
     @PostMapping("/analyze-vulnerabilities")
     public ResponseEntity<String> analyzeVulnerabilities(@RequestParam("filePath") String filePath) {
         try {
-            // Read the content of the file from the given file path
-            String content = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
+            // Ensure the path points to vulnerabilities.json
+            String vulnerabilitiesJson = aiService.readVulnerabilitiesFile(filePath);
 
-            // Call the AI model to analyze the vulnerabilities (just like before)
-            String aiResponse = aiService.analyzeVulnerabilities(content);
+            // Call AI to analyze vulnerabilities
+            String aiResponse = aiService.analyzeVulnerabilities(vulnerabilitiesJson);
 
             return ResponseEntity.ok(aiResponse);
         } catch (IOException e) {
