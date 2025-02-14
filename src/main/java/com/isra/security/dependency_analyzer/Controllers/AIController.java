@@ -15,36 +15,9 @@ import java.nio.file.Paths;
 @RestController
 @RequestMapping(value = "ai")
 public class AIController {
-
-    /*
-    @Autowired
-    private AIService aiService;
-
-    @GetMapping("/analyze")
-    public String analyzeVulnerabilities() {
-        return aiService.analyzeVulnerabilities();
-    }
-
-    private final ChatClient chatClient;
-
-    public AIController(ChatClient chatClient) {
-        this.chatClient =chatClient;
-    }
-
-    @GetMapping("/analyze")
-    public String analyze(@RequestParam(value = "message", defaultValue = "Tell me the best programming language") String message) {
-        return aiService.runDeepseekR1(message);
-    }
-
     private ChatClient chatClient;
 
     public AIController(ChatClient.Builder chatClient) {
-        this.chatClient = chatClient.build();
-    }*/
-    private ChatClient chatClient;
-
-    public AIController(ChatClient.Builder chatClient) {
-
         this.chatClient = chatClient.build();
     }
 

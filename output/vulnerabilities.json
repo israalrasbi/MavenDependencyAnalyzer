@@ -17,6 +17,8 @@
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
+    "epssScore" : 0.00307,
+    "epssPercentile" : 0.69877,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -53,6 +55,8 @@
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
+    "epssScore" : 0.00247,
+    "epssPercentile" : 0.64364,
     "cweId" : 611,
     "cweName" : "Improper Restriction of XML External Entity Reference",
     "cwes" : [ {
@@ -89,6 +93,8 @@
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
+    "epssScore" : 0.00482,
+    "epssPercentile" : 0.75982,
     "cweId" : 787,
     "cweName" : "Out-of-bounds Write",
     "cwes" : [ {
@@ -125,6 +131,8 @@
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
+    "epssScore" : 0.0029,
+    "epssPercentile" : 0.68981,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -161,6 +169,8 @@
     "cvssV3BaseScore" : 7.5,
     "severity" : "HIGH",
     "severityRank" : 1,
+    "epssScore" : 0.00289,
+    "epssPercentile" : 0.68945,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -197,6 +207,8 @@
     "cvssV3BaseScore" : 9.8,
     "severity" : "CRITICAL",
     "severityRank" : 0,
+    "epssScore" : 0.97318,
+    "epssPercentile" : 0.99948,
     "cweId" : 94,
     "cweName" : "Improper Control of Generation of Code ('Code Injection')",
     "cwes" : [ {
