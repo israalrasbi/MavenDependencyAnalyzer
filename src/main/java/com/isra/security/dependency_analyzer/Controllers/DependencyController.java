@@ -9,7 +9,7 @@ import java.io.IOException;
 
 
 @RestController
-@RequestMapping(value = "dependency-analyzer")
+@RequestMapping(value = "dependencyAnalyzer")
 public class DependencyController {
     @Autowired
     private TrackService trackService;
