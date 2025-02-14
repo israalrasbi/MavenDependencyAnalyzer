@@ -13,17 +13,16 @@ import java.nio.file.Paths;
 
 @Service
 public class AIService {
-    private ChatClient chatClient;
+    private final ChatClient chatClient;
 
-    public AIService(ChatClient.Builder chatClient) {
-        this.chatClient = chatClient.build();
+    @Autowired
+    public AIService(ChatClient chatClient) {
+        this.chatClient = chatClient;
     }
     public String analyzeVulnerabilities(String jsonContent) {
-        // Send the JSON content to the AI model for analysis
-        String response = chatClient
+        return chatClient
                 .prompt("Analyze the following vulnerabilities and provide feedback: " + jsonContent)
                 .call()
                 .content();
-        return response;
     }
 }
