@@ -15,36 +15,6 @@ import java.nio.file.Paths;
 @RestController
 @RequestMapping(value = "ai")
 public class AIController {
-    /*
-    private ChatClient chatClient;
-
-    public AIController(ChatClient.Builder chatClient) {
-        this.chatClient = chatClient.build();
-    }
-
-    @GetMapping("/{chat}")
-    public ResponseEntity<String> promptWithPathVariable(@PathVariable String chat) {
-        try {
-            String response = chatClient
-                    .prompt(chat)
-                    .call()
-                    .content();
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
-        }
-    }
-
-    @GetMapping("/stream/{chat}")
-    public Flux<String> streamChat(@PathVariable String chat) {
-        return chatClient
-                .prompt()
-                .user(chat)
-                .stream()
-                .content();
-    }*/
-
-
     @Autowired
     private AIService aiService;
 
@@ -64,6 +34,4 @@ public class AIController {
             return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }
     }
-
-
 }
