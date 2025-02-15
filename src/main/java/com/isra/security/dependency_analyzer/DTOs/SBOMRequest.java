@@ -35,10 +35,9 @@ public class SBOMRequest {
         return dto;
     }
 
-    public static Project convertToEntity(SBOMRequest dto){
+    public static Project convertToEntity(SBOMRequest dto) {
         Project entity = new Project();
-        if(HelperUtils.isNotNull(dto)){
-            entity.setProjectName(dto.getProjectUuid());
+        if (HelperUtils.isNotNull(dto)) {
             entity.setDependencyList(new ArrayList<>());
         }
         return entity;
