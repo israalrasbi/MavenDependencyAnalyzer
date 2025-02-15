@@ -6,31 +6,31 @@ import com.isra.security.dependency_analyzer.Utils.HelperUtils;
 import java.util.ArrayList;
 
 public class SBOMRequest {
-    private String projectName;
-    private String pomXml;
+    private String projectUuid;
+    private String bomJson;
 
 
-    public String getProjectName() {
-        return projectName;
+    public String getProjectUuid() {
+        return projectUuid;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setProjectUuid(String projectUuid) {
+        this.projectUuid = projectUuid;
     }
 
-    public String getPomXml() {
-        return pomXml;
+    public String getBomJson() {
+        return bomJson;
     }
 
-    public void setPomXml(String pomXml) {
-        this.pomXml = pomXml;
+    public void setBomJson(String bomJson) {
+        this.bomJson = bomJson;
     }
 
     public static SBOMRequest convertToDTO(Project project, String bomJsonContent){
         SBOMRequest dto = new SBOMRequest();
         if(HelperUtils.isNotNull(project)){
-            dto.setProjectName(project.getProjectName());
-            dto.setPomXml(bomJsonContent);
+            dto.setProjectUuid(project.getProjectName());
+            dto.setBomJson(bomJsonContent);
         }
         return dto;
     }
@@ -38,7 +38,7 @@ public class SBOMRequest {
     public static Project convertToEntity(SBOMRequest dto){
         Project entity = new Project();
         if(HelperUtils.isNotNull(dto)){
-            entity.setProjectName(dto.getProjectName());
+            entity.setProjectName(dto.getProjectUuid());
             entity.setDependencyList(new ArrayList<>());
         }
         return entity;
