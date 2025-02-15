@@ -26,10 +26,10 @@ public class SBOMRequest {
         this.bomJson = bomJson;
     }
 
-    public static SBOMRequest convertToDTO(Project project, String bomJsonContent){
+    public static SBOMRequest convertToDTO(Project project, String bomJsonContent, String projectUuid) {
         SBOMRequest dto = new SBOMRequest();
-        if(HelperUtils.isNotNull(project)){
-            dto.setProjectUuid(project.getProjectName());
+        if (HelperUtils.isNotNull(project)) {
+            dto.setProjectUuid(projectUuid);
             dto.setBomJson(bomJsonContent);
         }
         return dto;
