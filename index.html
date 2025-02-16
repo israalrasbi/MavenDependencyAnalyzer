@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maven Dependency Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Maven Dependency Analyzer</h1>
+    </header>
+    <main>
+      <div class="upload-section">
+        <h2>Upload pom.xml</h2>
+        <div class="dropbox" id="dropbox" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <p>Drag and drop your pom.xml here</p>
+        </div>
+        <input type="file" id="fileInput" style="display: none;" />
+        <button id="uploadBtn" class="btn">Upload</button>
+      </div>
+
+      <div class="vulnerabilities-section">
+        <button id="generateFeedbackBtn" class="btn" disabled>Generate Feedback</button>
+        <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+        <h2>Vulnerabilities</h2>
+        <ul id="vulnerabilitiesList"></ul>
+        <div id="aiFeedback" class="ai-feedback" style="display: none;"></div>
+      </div>
+
+      <div class="dashboard-section">
+        <button id="displayDashboardBtn" class="btn">Display Dashboard</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
