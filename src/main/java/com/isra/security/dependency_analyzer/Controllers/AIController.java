@@ -19,12 +19,8 @@ public class AIController {
     @PostMapping("/analyzeVulnerabilities")
     public ResponseEntity<String> analyzeVulnerabilities(@RequestParam("filePath") String filePath) {
         try {
-            // Ensure the path points to vulnerabilities.json
             String vulnerabilitiesJson = aiService.readVulnerabilitiesFile(filePath);
-
-            // Call AI to analyze vulnerabilities
             String aiResponse = aiService.analyzeVulnerabilities(vulnerabilitiesJson);
-
             return ResponseEntity.ok(aiResponse);
         } catch (IOException e) {
             return ResponseEntity.badRequest().body("Error reading file: " + e.getMessage());
