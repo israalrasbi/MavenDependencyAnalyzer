@@ -100,7 +100,6 @@ h2 {
   padding: 15px;
   border-radius: 10px;
   color: #dfe6e9;
-  font-style: italic;
 }
 
 .spinner {
@@ -135,3 +134,25 @@ h2 {
   background-color: #8681d1;
   font-weight: bold;
 }
+
+.uploaded-message {
+  color: #8649d4;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #cdb2f1;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error-message {
+  color: rgb(244, 131, 131);
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
