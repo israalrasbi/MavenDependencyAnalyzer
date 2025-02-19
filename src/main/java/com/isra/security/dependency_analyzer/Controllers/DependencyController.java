@@ -14,6 +14,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping(value = "dependencyAnalyzer")
+@CrossOrigin("*")
 public class DependencyController {
     @Autowired
     private TrackService trackService;
