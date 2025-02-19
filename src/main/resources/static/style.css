@@ -117,3 +117,20 @@ h2 {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.vulnerabilities-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.vulnerabilities-table th, .vulnerabilities-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.vulnerabilities-table th {
+  background-color: #8681d1;
+  font-weight: bold;
+}
