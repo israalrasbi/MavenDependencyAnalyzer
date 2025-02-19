@@ -10,6 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/track")
+@CrossOrigin("*")
 public class TrackController {
     @Autowired
     private TrackService trackService;
