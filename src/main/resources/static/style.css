@@ -128,6 +128,7 @@ h2 {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  justify-content: first baseline;
 }
 
 .vulnerabilities-table th {
