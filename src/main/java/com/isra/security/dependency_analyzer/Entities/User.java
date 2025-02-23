@@ -3,14 +3,11 @@ package com.isra.security.dependency_analyzer.Entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import javax.management.relation.Role;
 import java.util.Date;
 @Entity
 @Data
 @Table(name = "users")
 public class User {
-    @CreationTimestamp
     private boolean isActive;
     private Date createdDate;
     private Date updatedDate;
