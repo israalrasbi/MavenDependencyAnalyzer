@@ -1,15 +1,37 @@
 package com.isra.security.dependency_analyzer.Entities;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 import javax.management.relation.Role;
 import java.util.Date;
-import java.util.UUID;
-
+@Entity
+@Data
+@Table(name = "users")
 public class User {
+    @CreationTimestamp
     private boolean isActive;
     private Date createdDate;
     private Date updatedDate;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @NotBlank(message = "Username is needed")
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @NotBlank(message = "Password is needed")
+    @Column(unique = true, nullable = false)
     private String password;
+
+    @NotBlank(message = "Email is needed")
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Role role;
 }
