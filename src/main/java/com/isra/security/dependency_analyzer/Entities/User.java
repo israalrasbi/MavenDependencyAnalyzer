@@ -1,5 +1,6 @@
 package com.isra.security.dependency_analyzer.Entities;
 
+import com.isra.security.dependency_analyzer.Enum.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
@@ -8,7 +9,9 @@ import java.util.Date;
 @Data
 @Table(name = "users")
 public class User {
+
     private boolean isActive;
+    @Column(nullable = false)
     private Date createdDate;
     private Date updatedDate;
 
@@ -21,7 +24,7 @@ public class User {
     private String username;
 
     @NotBlank(message = "Password is needed")
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String password;
 
     @NotBlank(message = "Email is needed")
