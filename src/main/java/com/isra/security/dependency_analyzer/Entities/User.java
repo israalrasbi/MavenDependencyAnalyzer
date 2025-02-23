@@ -8,7 +8,7 @@ public class User {
     private boolean isActive;
     private Date createdDate;
     private Date updatedDate;
-    private UUID id;
+    private Integer id;
     private String username;
     private String password;
     private Role role;
