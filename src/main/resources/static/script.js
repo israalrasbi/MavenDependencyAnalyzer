@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Helper function to get the token
+    function getToken() {
+        return localStorage.getItem("token");
+    }
+
     //upload pom.xml 
     uploadBtn.addEventListener("click", async () => {
         const dropBox = document.getElementById("dropbox"); 
@@ -33,9 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = new FormData();
             formData.append("file", pomFile);
     
+            const token = getToken();
             const uploadResponse = await fetch(`${CONFIG.BASE_URL}/dependencyAnalyzer/uploadPom`, {
                 method: "POST",
                 body: formData,
+                headers: {
+                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                }
             });
     
             if (!uploadResponse.ok) throw new Error("Failed to upload pom.xml");
@@ -56,18 +65,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         vulnerabilitiesList.innerHTML = "";
         try {
+            const token = getToken();
             //generate SBOM
-            const sbomResponse = await fetch(`${CONFIG.BASE_URL}/dependencyAnalyzer/generateSbom?path=${CONFIG.pomFilePath}&projectUuid=${CONFIG.projectUuid}`);
+            const sbomResponse = await fetch(`${CONFIG.BASE_URL}/dependencyAnalyzer/generateSbom?path=${CONFIG.pomFilePath}&projectUuid=${CONFIG.projectUuid}`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                }
+            });
             if (!sbomResponse.ok) throw new Error("Failed to generate SBOM");
 
             //upload sbom to dependency track
             const uploadSbomResponse = await fetch(`${CONFIG.BASE_URL}/track/uploadSbom?projectUuid=${CONFIG.projectUuid}&filePath=${encodeURIComponent(CONFIG.bomFilePath)}`, {
                 method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                }
             });
             if (!uploadSbomResponse.ok) throw new Error("Failed to upload SBOM");
 
             //fetch vulnerabilities from dependency track
-            const vulnerabilitiesResponse = await fetch(`${CONFIG.BASE_URL}/track/getVulnerabilities?projectUuid=${CONFIG.projectUuid}`);
+            const vulnerabilitiesResponse = await fetch(`${CONFIG.BASE_URL}/track/getVulnerabilities?projectUuid=${CONFIG.projectUuid}`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                }
+            });
             if (!vulnerabilitiesResponse.ok) throw new Error("Failed to get vulnerabilities");
 
             //display the vulnerabilities
@@ -87,10 +108,12 @@ document.addEventListener("DOMContentLoaded", function () {
         feedbackSpinner.style.display = "block";
         generateFeedbackBtn.disabled = true;
         try {
+            const token = getToken();
             const response = await fetch(`${CONFIG.BASE_URL}/ai/analyzeVulnerabilities?filePath=${CONFIG.vulnerabilitiesFilePath}`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`  // Add Authorization header
                 },
                 body: JSON.stringify(CONFIG.vulnerabilitiesFilePath) 
             });
