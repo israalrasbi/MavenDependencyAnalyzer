@@ -1,6 +1,6 @@
 package com.isra.security.dependency_analyzer.DTOs;
 
-import com.isra.security.dependency_analyzer.Enum.Role;
+import com.isra.security.dependency_analyzer.Enums.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
