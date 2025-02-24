@@ -18,7 +18,7 @@
     "severity" : "HIGH",
     "severityRank" : 1,
     "epssScore" : 0.00307,
-    "epssPercentile" : 0.69877,
+    "epssPercentile" : 0.69879,
     "cweId" : 502,
     "cweName" : "Deserialization of Untrusted Data",
     "cwes" : [ {
@@ -57,7 +57,7 @@
     "severity" : "HIGH",
     "severityRank" : 1,
     "epssScore" : 0.00247,
-    "epssPercentile" : 0.64364,
+    "epssPercentile" : 0.64342,
     "cweId" : 611,
     "cweName" : "Improper Restriction of XML External Entity Reference",
     "cwes" : [ {
@@ -96,7 +96,7 @@
     "severity" : "HIGH",
     "severityRank" : 1,
     "epssScore" : 0.00482,
-    "epssPercentile" : 0.75982,
+    "epssPercentile" : 0.75972,
     "cweId" : 787,
     "cweName" : "Out-of-bounds Write",
     "cwes" : [ {
