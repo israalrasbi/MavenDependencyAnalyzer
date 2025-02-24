@@ -1,37 +1,41 @@
 package com.isra.security.dependency_analyzer.Entities;
 
-import com.isra.security.dependency_analyzer.Enum.Role;
+import com.isra.security.dependency_analyzer.Enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import java.util.Date;
+import java.time.LocalDateTime;
+
+
 @Entity
 @Table(name = "users")
 public class User {
 
-    private boolean isActive;
-    @Column(updatable = false)
-    private Date createdDate;
-    private Date updatedDate;
+    boolean isActive;
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
+
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    Integer id;
 
     @NotBlank(message = "Username is needed")
     @Column(unique = true, nullable = false)
-    private String username;
+    public String userName;
 
     @NotBlank(message = "Password is needed")
     @Column(nullable = false)
-    private String password;
+    public String password;
 
     @NotBlank(message = "Email is needed")
     @Column(unique = true, nullable = false)
-    private String email;
+    public String email;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Role role;
+    public Role role;
 
     public boolean isActive() {
         return isActive;
@@ -41,20 +45,20 @@ public class User {
         isActive = active;
     }
 
-    public Date getCreatedDate() {
-        return createdDate;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public Date getUpdatedDate() {
-        return updatedDate;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setUpdatedDate(Date updatedDate) {
-        this.updatedDate = updatedDate;
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public Integer getId() {
@@ -65,12 +69,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -96,4 +100,27 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public User() {
+        this.isActive = true;
+    }
+
+    public User(String email, String password, Role role, String firstName) {
+        this.userName = firstName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
 }
