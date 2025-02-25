@@ -21,36 +21,45 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Helper function to get the token
+    //check if user is authenticated before allowing access
+    document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            window.location.href = "signin.html"; //redirect to login if not authenticated
+        }
+    });
+
+
+    //function to get the token
     function getToken() {
         return localStorage.getItem("token");
     }
 
     //upload pom.xml 
     uploadBtn.addEventListener("click", async () => {
-        const dropBox = document.getElementById("dropbox"); 
+        const dropBox = document.getElementById("dropbox");
         if (!pomFile) {
             dropBox.innerHTML = `<p class="error-message">Please select a pom.xml file first.</strong></p>`;
             return;
         }
-    
+
         try {
             const formData = new FormData();
             formData.append("file", pomFile);
-    
+
             const token = getToken();
             const uploadResponse = await fetch(`${CONFIG.BASE_URL}/dependencyAnalyzer/uploadPom`, {
                 method: "POST",
                 body: formData,
                 headers: {
-                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                    "Authorization": `Bearer ${token}`
                 }
             });
-    
+
             if (!uploadResponse.ok) throw new Error("Failed to upload pom.xml");
-    
+
             dropBox.innerHTML = `<p class="uploaded-message">File Uploaded: <strong>${pomFile.name}</strong></p>`;
-    
+
             listVulnerabilitiesBtn.disabled = false;
         } catch (error) {
             dropBox.innerHTML = `<p class="error-message">An error occurred: <strong>${error.message}</strong></p>`;
@@ -69,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //generate SBOM
             const sbomResponse = await fetch(`${CONFIG.BASE_URL}/dependencyAnalyzer/generateSbom?path=${CONFIG.pomFilePath}&projectUuid=${CONFIG.projectUuid}`, {
                 headers: {
-                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                    "Authorization": `Bearer ${token}`  
                 }
             });
             if (!sbomResponse.ok) throw new Error("Failed to generate SBOM");
@@ -78,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const uploadSbomResponse = await fetch(`${CONFIG.BASE_URL}/track/uploadSbom?projectUuid=${CONFIG.projectUuid}&filePath=${encodeURIComponent(CONFIG.bomFilePath)}`, {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                    "Authorization": `Bearer ${token}`  
                 }
             });
             if (!uploadSbomResponse.ok) throw new Error("Failed to upload SBOM");
@@ -86,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //fetch vulnerabilities from dependency track
             const vulnerabilitiesResponse = await fetch(`${CONFIG.BASE_URL}/track/getVulnerabilities?projectUuid=${CONFIG.projectUuid}`, {
                 headers: {
-                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                    "Authorization": `Bearer ${token}`  
                 }
             });
             if (!vulnerabilitiesResponse.ok) throw new Error("Failed to get vulnerabilities");
@@ -113,9 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`  // Add Authorization header
+                    "Authorization": `Bearer ${token}`  
                 },
-                body: JSON.stringify(CONFIG.vulnerabilitiesFilePath) 
+                body: JSON.stringify(CONFIG.vulnerabilitiesFilePath)
             });
 
             if (!response.ok) throw new Error("Failed to analyze vulnerabilities");
@@ -137,25 +146,31 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open("http://localhost:8080/dashboard", "_blank");
     });
 
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+        localStorage.removeItem("token");
+        window.location.href = "signin.html";
+    });
+
+
     function displayVulnerabilities(vulnerabilities) {
         const vulnerabilitiesList = document.getElementById("vulnerabilitiesList");
-        vulnerabilitiesList.innerHTML = ""; 
-    
+        vulnerabilitiesList.innerHTML = "";
+
         if (!vulnerabilities || vulnerabilities.length === 0) {
             vulnerabilitiesList.innerHTML = "<p>No vulnerabilities found.</p>";
             return;
         }
-    
+
         //total vulnerabilities 
         const totalVulnerabilities = vulnerabilities.length;
         const countHeader = document.createElement("h3");
         countHeader.innerHTML = `Total Vulnerabilities: ${totalVulnerabilities}`;
         vulnerabilitiesList.appendChild(countHeader);
-    
+
         //create table to display vulnerabilities
         const table = document.createElement("table");
         table.classList.add("vulnerabilities-table");
-    
+
         //table header
         const thead = document.createElement("thead");
         thead.innerHTML = `
@@ -167,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </tr>
         `;
         table.appendChild(thead);
-    
+
         //table body
         const tbody = document.createElement("tbody");
         vulnerabilities.forEach((vuln) => {
@@ -180,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             tbody.appendChild(row);
         });
-    
+
         table.appendChild(tbody);
         vulnerabilitiesList.appendChild(table);
     }
