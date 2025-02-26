@@ -1,6 +1,42 @@
 [ {
   "component" : {
-    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
+    "uuid" : "6506f3c5-91f1-49e4-b173-b7649d8c37d0",
+    "name" : "commons-text",
+    "group" : "org.apache.commons",
+    "version" : "1.5",
+    "purl" : "pkg:maven/org.apache.commons/commons-text@1.5",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
+    "latestVersion" : "1.13.0"
+  },
+  "vulnerability" : {
+    "uuid" : "c5bde492-a926-4703-a10f-f6bbf2372251",
+    "source" : "NVD",
+    "vulnId" : "CVE-2022-42889",
+    "description" : "Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is \"${prefix:name}\", where \"prefix\" is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. Starting with version 1.5 and continuing through 1.9, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are: - \"script\" - execute expressions using the JVM script execution engine (javax.script) - \"dns\" - resolve dns records - \"url\" - load values from urls, including from remote servers Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used. Users are recommended to upgrade to Apache Commons Text 1.10.0, which disables the problematic interpolators by default.",
+    "cvssV3BaseScore" : 9.8,
+    "severity" : "CRITICAL",
+    "severityRank" : 0,
+    "epssScore" : 0.97318,
+    "epssPercentile" : 0.99948,
+    "cweId" : 94,
+    "cweName" : "Improper Control of Generation of Code ('Code Injection')",
+    "cwes" : [ {
+      "cweId" : 94,
+      "name" : "Improper Control of Generation of Code ('Code Injection')"
+    } ],
+    "aliases" : [ ]
+  },
+  "analysis" : {
+    "isSuppressed" : false
+  },
+  "attribution" : {
+    "analyzerIdentity" : "OSSINDEX_ANALYZER",
+    "attributedOn" : 1740555646142
+  },
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:6506f3c5-91f1-49e4-b173-b7649d8c37d0:c5bde492-a926-4703-a10f-f6bbf2372251"
+}, {
+  "component" : {
+    "uuid" : "da719d61-ddcd-4a08-9bf8-ae93f4343765",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -32,14 +68,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739552526190,
-    "alternateIdentifier" : "CVE-2019-12086",
-    "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2019-12086?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
+    "attributedOn" : 1740556478339
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:ae08f3a0-4df7-4825-9036-bb6f13b62279"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:da719d61-ddcd-4a08-9bf8-ae93f4343765:ae08f3a0-4df7-4825-9036-bb6f13b62279"
 }, {
   "component" : {
-    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
+    "uuid" : "da719d61-ddcd-4a08-9bf8-ae93f4343765",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -71,14 +105,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739552526248,
-    "alternateIdentifier" : "CVE-2020-25649",
-    "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2020-25649?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
+    "attributedOn" : 1740556478366
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:76438adb-37f4-4faa-ba40-8d50d74150fe"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:da719d61-ddcd-4a08-9bf8-ae93f4343765:76438adb-37f4-4faa-ba40-8d50d74150fe"
 }, {
   "component" : {
-    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
+    "uuid" : "da719d61-ddcd-4a08-9bf8-ae93f4343765",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -110,14 +142,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739552526291,
-    "alternateIdentifier" : "CVE-2020-36518",
-    "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2020-36518?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
+    "attributedOn" : 1740556478398
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:da719d61-ddcd-4a08-9bf8-ae93f4343765:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
 }, {
   "component" : {
-    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
+    "uuid" : "da719d61-ddcd-4a08-9bf8-ae93f4343765",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -148,14 +178,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739552526325,
-    "alternateIdentifier" : "CVE-2022-42003",
-    "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2022-42003?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
+    "attributedOn" : 1740556478427
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:da719d61-ddcd-4a08-9bf8-ae93f4343765:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
 }, {
   "component" : {
-    "uuid" : "4e3ada6f-02a0-45b8-b563-192f5183b3d6",
+    "uuid" : "da719d61-ddcd-4a08-9bf8-ae93f4343765",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -186,47 +214,7 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739552526380,
-    "alternateIdentifier" : "CVE-2022-42004",
-    "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2022-42004?component-type=maven&component-name=com.fasterxml.jackson.core%2Fjackson-databind&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
+    "attributedOn" : 1740556478453
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:4e3ada6f-02a0-45b8-b563-192f5183b3d6:19d58e24-80c2-4228-8785-8feb9efc3028"
-}, {
-  "component" : {
-    "uuid" : "e0a3839d-cf4c-4468-a9f7-7656270d4bc3",
-    "name" : "commons-text",
-    "group" : "org.apache.commons",
-    "version" : "1.5",
-    "purl" : "pkg:maven/org.apache.commons/commons-text@1.5",
-    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "1.13.0"
-  },
-  "vulnerability" : {
-    "uuid" : "c5bde492-a926-4703-a10f-f6bbf2372251",
-    "source" : "NVD",
-    "vulnId" : "CVE-2022-42889",
-    "description" : "Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is \"${prefix:name}\", where \"prefix\" is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. Starting with version 1.5 and continuing through 1.9, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are: - \"script\" - execute expressions using the JVM script execution engine (javax.script) - \"dns\" - resolve dns records - \"url\" - load values from urls, including from remote servers Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used. Users are recommended to upgrade to Apache Commons Text 1.10.0, which disables the problematic interpolators by default.",
-    "cvssV3BaseScore" : 9.8,
-    "severity" : "CRITICAL",
-    "severityRank" : 0,
-    "epssScore" : 0.97318,
-    "epssPercentile" : 0.99948,
-    "cweId" : 94,
-    "cweName" : "Improper Control of Generation of Code ('Code Injection')",
-    "cwes" : [ {
-      "cweId" : 94,
-      "name" : "Improper Control of Generation of Code ('Code Injection')"
-    } ],
-    "aliases" : [ ]
-  },
-  "analysis" : {
-    "isSuppressed" : false
-  },
-  "attribution" : {
-    "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1739552526432,
-    "alternateIdentifier" : "CVE-2022-42889",
-    "referenceUrl" : "https://ossindex.sonatype.org/vulnerability/CVE-2022-42889?component-type=maven&component-name=org.apache.commons%2Fcommons-text&utm_source=dependency-track&utm_medium=integration&utm_content=v4.12.4"
-  },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:e0a3839d-cf4c-4468-a9f7-7656270d4bc3:c5bde492-a926-4703-a10f-f6bbf2372251"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:da719d61-ddcd-4a08-9bf8-ae93f4343765:19d58e24-80c2-4228-8785-8feb9efc3028"
 } ]

@@ -10,7 +10,6 @@ import java.io.IOException;
 @RestController
 @RequestMapping(value = "ai")
 @CrossOrigin("*")
-
 public class AIController {
     @Autowired
     private AIService aiService;
