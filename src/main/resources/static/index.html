@@ -7,13 +7,25 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="images/logo.png">
   <script src="config.js"></script>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nova+Square&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <video class="background-video" autoplay loop muted>
+    <source src="video/purple-thundercloud-moewalls-com.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <div class="container">
     <header>
       <img src="images/MDA_logo.png" alt="Maven Dependency Analyzer Logo" class="header-logo">
-      <p>The Maven Dependency Analyzer helps you analyze your project’s dependencies and identify any potential vulnerabilities in them. Upload your pom.xml file, and the tool will generate a Software Bill of Materials (SBOM) to detect any vulnerabilities in the dependencies used by your project.</p>
+      <p>The Maven Dependency Analyzer helps you analyze your project’s dependencies and identify any potential
+        vulnerabilities in them. Upload your pom.xml file, and the tool will generate a Software Bill of Materials
+        (SBOM) to detect any vulnerabilities in the dependencies used by your project.</p>
     </header>
     <main>
       <div class="upload-section">
@@ -40,11 +52,10 @@
         <div id="aiFeedback" class="ai-feedback" style="display: none;"></div>
         <button id="logoutBtn" class="btn">Logout</button>
       </div>
-
-      
     </main>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
