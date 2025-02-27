@@ -9,17 +9,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const feedbackSpinner = document.getElementById("feedbackSpinner");
     const vulnerabilitiesList = document.getElementById("vulnerabilitiesList");
     const aiFeedback = document.getElementById("aiFeedback");
+    const submitBtn = document.getElementById("submitBtn");
 
     let pomFile = null;
 
     dropbox.addEventListener("click", () => fileInput.click());
+    uploadBtn.addEventListener("click", () => fileInput.click());
 
     fileInput.addEventListener("change", function () {
         if (this.files.length > 0) {
             pomFile = this.files[0];
             dropbox.textContent = `Selected: ${pomFile.name}`;
-        }
+    
+            //hide upload button and show submit button
+            uploadBtn.style.display = "none";
+            submitBtn.style.display = "block";
+
+            const container = document.querySelector(".upload-section");
+        
+        // Set up the container as a flexbox and center its children
+        container.style.display = "flex";
+        dropbox.style.display - "block";
+        container.style.flexDirection = "column";
+        container.style.alignItems = "center";  // Horizontally center the children
+        container.style.justifyContent = "center";  // Vertically center the children
+        
+    
+    }
     });
+    
 
     //check if user is authenticated before allowing access
     document.addEventListener("DOMContentLoaded", function () {
@@ -36,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //upload pom.xml 
-    uploadBtn.addEventListener("click", async () => {
+    submitBtn.addEventListener("click", async () => {
         const dropBox = document.getElementById("dropbox");
         if (!pomFile) {
             dropBox.innerHTML = `<p class="error-message">Please select a pom.xml file first.</strong></p>`;

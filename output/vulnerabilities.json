@@ -36,7 +36,7 @@
   "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:6506f3c5-91f1-49e4-b173-b7649d8c37d0:c5bde492-a926-4703-a10f-f6bbf2372251"
 }, {
   "component" : {
-    "uuid" : "1170ffca-df45-4dae-99df-04b8083bd433",
+    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -68,12 +68,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740563053340
+    "attributedOn" : 1740644860598
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:1170ffca-df45-4dae-99df-04b8083bd433:ae08f3a0-4df7-4825-9036-bb6f13b62279"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:ae08f3a0-4df7-4825-9036-bb6f13b62279"
 }, {
   "component" : {
-    "uuid" : "1170ffca-df45-4dae-99df-04b8083bd433",
+    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -105,12 +105,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740563053364
+    "attributedOn" : 1740644860622
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:1170ffca-df45-4dae-99df-04b8083bd433:76438adb-37f4-4faa-ba40-8d50d74150fe"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:76438adb-37f4-4faa-ba40-8d50d74150fe"
 }, {
   "component" : {
-    "uuid" : "1170ffca-df45-4dae-99df-04b8083bd433",
+    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -142,12 +142,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740563053383
+    "attributedOn" : 1740644860644
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:1170ffca-df45-4dae-99df-04b8083bd433:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
 }, {
   "component" : {
-    "uuid" : "1170ffca-df45-4dae-99df-04b8083bd433",
+    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -178,12 +178,12 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740563053402
+    "attributedOn" : 1740644860675
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:1170ffca-df45-4dae-99df-04b8083bd433:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
 }, {
   "component" : {
-    "uuid" : "1170ffca-df45-4dae-99df-04b8083bd433",
+    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
@@ -214,7 +214,7 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740563053416
+    "attributedOn" : 1740644860707
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:1170ffca-df45-4dae-99df-04b8083bd433:19d58e24-80c2-4228-8785-8feb9efc3028"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:19d58e24-80c2-4228-8785-8feb9efc3028"
 } ]
