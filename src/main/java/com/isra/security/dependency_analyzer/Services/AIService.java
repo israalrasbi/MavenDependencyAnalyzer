@@ -32,7 +32,7 @@ public class AIService {
         Map<String, Object> requestBody = Map.of(
                 "contents", Collections.singletonList(
                         Map.of("parts", Collections.singletonList(
-                                Map.of("text", "Analyze these vulnerabilities and suggest fixes:\n" + jsonContent)
+                                Map.of("text", "Analyze these vulnerabilities and suggest fixes in 4 bullet points:\n" + jsonContent)
                         ))
                 )
         );
