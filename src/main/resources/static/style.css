@@ -1,6 +1,6 @@
 body {
   font-family:"Exo 2", serif;
-  background: none; 
+  background: rgb(52 52 75);
   margin: 0;
   padding: 0;
   display: flex;
@@ -18,7 +18,7 @@ body {
   width: 90%;
   max-width: 1200px;
   background: rgba(30, 30, 46, 0.85);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgb(0, 0, 0);
   border-radius: 20px;
   padding: 20px;
   backdrop-filter: blur(10px);
@@ -183,11 +183,11 @@ h2 {
 }
 
 .auth-container {
-  width: 300px;
+  width: 500px;
   margin: auto;
   padding: 20px;
   background: rgba(30, 30, 46, 0.9);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgb(0, 0, 0);
   border-radius: 10px;
   text-align: center;
   color: #fff; 
