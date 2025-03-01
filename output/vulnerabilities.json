@@ -36,13 +36,13 @@
   "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:6506f3c5-91f1-49e4-b173-b7649d8c37d0:c5bde492-a926-4703-a10f-f6bbf2372251"
 }, {
   "component" : {
-    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
+    "uuid" : "9ef7982c-e686-462f-8319-0c86b9d6249c",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
     "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "2.18.2"
+    "latestVersion" : "2.18.3"
   },
   "vulnerability" : {
     "uuid" : "ae08f3a0-4df7-4825-9036-bb6f13b62279",
@@ -68,18 +68,18 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740644860598
+    "attributedOn" : 1740851754660
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:ae08f3a0-4df7-4825-9036-bb6f13b62279"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:9ef7982c-e686-462f-8319-0c86b9d6249c:ae08f3a0-4df7-4825-9036-bb6f13b62279"
 }, {
   "component" : {
-    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
+    "uuid" : "9ef7982c-e686-462f-8319-0c86b9d6249c",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
     "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "2.18.2"
+    "latestVersion" : "2.18.3"
   },
   "vulnerability" : {
     "uuid" : "76438adb-37f4-4faa-ba40-8d50d74150fe",
@@ -105,18 +105,18 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740644860622
+    "attributedOn" : 1740851754687
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:76438adb-37f4-4faa-ba40-8d50d74150fe"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:9ef7982c-e686-462f-8319-0c86b9d6249c:76438adb-37f4-4faa-ba40-8d50d74150fe"
 }, {
   "component" : {
-    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
+    "uuid" : "9ef7982c-e686-462f-8319-0c86b9d6249c",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
     "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "2.18.2"
+    "latestVersion" : "2.18.3"
   },
   "vulnerability" : {
     "uuid" : "4e9e206b-09dc-4fe4-a050-fbdc2157d9cd",
@@ -142,18 +142,18 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740644860644
+    "attributedOn" : 1740851754714
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:9ef7982c-e686-462f-8319-0c86b9d6249c:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
 }, {
   "component" : {
-    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
+    "uuid" : "9ef7982c-e686-462f-8319-0c86b9d6249c",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
     "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "2.18.2"
+    "latestVersion" : "2.18.3"
   },
   "vulnerability" : {
     "uuid" : "a23e6840-59a6-4c5d-ade6-cf5a94abc8dc",
@@ -178,18 +178,18 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740644860675
+    "attributedOn" : 1740851754739
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:9ef7982c-e686-462f-8319-0c86b9d6249c:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
 }, {
   "component" : {
-    "uuid" : "cbd5b30b-0847-4a01-a48d-650a0405a0e7",
+    "uuid" : "9ef7982c-e686-462f-8319-0c86b9d6249c",
     "name" : "jackson-databind",
     "group" : "com.fasterxml.jackson.core",
     "version" : "2.9.8",
     "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
     "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "2.18.2"
+    "latestVersion" : "2.18.3"
   },
   "vulnerability" : {
     "uuid" : "19d58e24-80c2-4228-8785-8feb9efc3028",
@@ -214,7 +214,7 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1740644860707
+    "attributedOn" : 1740851754768
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:cbd5b30b-0847-4a01-a48d-650a0405a0e7:19d58e24-80c2-4228-8785-8feb9efc3028"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:9ef7982c-e686-462f-8319-0c86b9d6249c:19d58e24-80c2-4228-8785-8feb9efc3028"
 } ]

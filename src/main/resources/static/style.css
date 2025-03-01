@@ -50,13 +50,26 @@ header h1 {
   margin-bottom: -50px;
 }
 
-.upload-section, .vulnerabilities-section, .ai-section {
+.vulnerabilities-section, .ai-section {
   background: rgba(45, 45, 68, 0.85);
   padding: 20px;
   margin: 20px 0;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.upload-section {
+  background: rgba(45, 45, 68, 0.85);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+}
+
 
 h2 {
   color: #a29bfe;
@@ -71,7 +84,14 @@ h2 {
   transition: 0.3s ease;
   color: #dfe6e9;
   box-shadow: 0 0 10px rgba(162, 155, 254, 0.5);
+  width: 800px; 
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .dropbox:hover {
   background: rgba(162, 155, 254, 0.1);
