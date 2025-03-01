@@ -15,30 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dropbox.addEventListener("click", () => fileInput.click());
     uploadBtn.addEventListener("click", () => fileInput.click());
-
     fileInput.addEventListener("change", function () {
         if (this.files.length > 0) {
             pomFile = this.files[0];
-            dropbox.textContent = `Selected: ${pomFile.name}`;
-    
-            //hide upload button and show submit button
+            document.getElementById("dropbox-text").textContent = `Selected: ${pomFile.name}`;
             uploadBtn.style.display = "none";
             submitBtn.style.display = "block";
-
-            const container = document.querySelector(".upload-section");
-        
-        // Set up the container as a flexbox and center its children
-        container.style.display = "flex";
-        dropbox.style.display - "block";
-        container.style.flexDirection = "column";
-        container.style.alignItems = "center";  // Horizontally center the children
-        container.style.justifyContent = "center";  // Vertically center the children
-        
-    
-    }
+        }
     });
     
-
     //check if user is authenticated before allowing access
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("token");
