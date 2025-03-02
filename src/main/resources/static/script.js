@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             submitBtn.style.display = "block";
         }
     });
-    
+
     //check if user is authenticated before allowing access
     document.addEventListener("DOMContentLoaded", function () {
         const token = localStorage.getItem("token");
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //generate SBOM
             const sbomResponse = await fetch(`${CONFIG.BASE_URL}/dependencyAnalyzer/generateSbom?path=${CONFIG.pomFilePath}&projectUuid=${CONFIG.projectUuid}`, {
                 headers: {
-                    "Authorization": `Bearer ${token}`  
+                    "Authorization": `Bearer ${token}`
                 }
             });
             if (!sbomResponse.ok) throw new Error("Failed to generate SBOM");
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const uploadSbomResponse = await fetch(`${CONFIG.BASE_URL}/track/uploadSbom?projectUuid=${CONFIG.projectUuid}&filePath=${encodeURIComponent(CONFIG.bomFilePath)}`, {
                 method: "POST",
                 headers: {
-                    "Authorization": `Bearer ${token}`  
+                    "Authorization": `Bearer ${token}`
                 }
             });
             if (!uploadSbomResponse.ok) throw new Error("Failed to upload SBOM");
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             //fetch vulnerabilities from dependency track
             const vulnerabilitiesResponse = await fetch(`${CONFIG.BASE_URL}/track/getVulnerabilities?projectUuid=${CONFIG.projectUuid}`, {
                 headers: {
-                    "Authorization": `Bearer ${token}`  
+                    "Authorization": `Bearer ${token}`
                 }
             });
             if (!vulnerabilitiesResponse.ok) throw new Error("Failed to get vulnerabilities");
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`  
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(CONFIG.vulnerabilitiesFilePath)
             });

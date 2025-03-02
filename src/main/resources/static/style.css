@@ -73,7 +73,8 @@ h2 {
   transition: 0.3s ease;
   color: #dfe6e9;
   box-shadow: 0 0 10px rgba(162, 155, 254, 0.5);
-  width: 800px; 
+  width: 100%;
+  max-width: 800px;
   height: 70px;
   overflow: hidden;
   display: flex;
