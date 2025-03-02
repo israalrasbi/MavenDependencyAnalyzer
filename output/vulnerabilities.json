@@ -34,4 +34,187 @@
     "attributedOn" : 1740555646142
   },
   "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:6506f3c5-91f1-49e4-b173-b7649d8c37d0:c5bde492-a926-4703-a10f-f6bbf2372251"
+}, {
+  "component" : {
+    "uuid" : "0f59a266-6d6b-4f9c-95c7-4459400a861b",
+    "name" : "jackson-databind",
+    "group" : "com.fasterxml.jackson.core",
+    "version" : "2.9.8",
+    "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
+    "latestVersion" : "2.18.3"
+  },
+  "vulnerability" : {
+    "uuid" : "ae08f3a0-4df7-4825-9036-bb6f13b62279",
+    "source" : "NVD",
+    "vulnId" : "CVE-2019-12086",
+    "description" : "A Polymorphic Typing issue was discovered in FasterXML jackson-databind 2.x before 2.9.9. When Default Typing is enabled (either globally or for a specific property) for an externally exposed JSON endpoint, the service has the mysql-connector-java jar (8.0.14 or earlier) in the classpath, and an attacker can host a crafted MySQL server reachable by the victim, an attacker can send a crafted JSON message that allows them to read arbitrary local files on the server. This occurs because of missing com.mysql.cj.jdbc.admin.MiniAdmin validation.",
+    "cvssV2BaseScore" : 5.0,
+    "cvssV3BaseScore" : 7.5,
+    "severity" : "HIGH",
+    "severityRank" : 1,
+    "epssScore" : 0.00307,
+    "epssPercentile" : 0.70001,
+    "cweId" : 502,
+    "cweName" : "Deserialization of Untrusted Data",
+    "cwes" : [ {
+      "cweId" : 502,
+      "name" : "Deserialization of Untrusted Data"
+    } ],
+    "aliases" : [ ]
+  },
+  "analysis" : {
+    "isSuppressed" : false
+  },
+  "attribution" : {
+    "analyzerIdentity" : "OSSINDEX_ANALYZER",
+    "attributedOn" : 1740938142920
+  },
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:0f59a266-6d6b-4f9c-95c7-4459400a861b:ae08f3a0-4df7-4825-9036-bb6f13b62279"
+}, {
+  "component" : {
+    "uuid" : "0f59a266-6d6b-4f9c-95c7-4459400a861b",
+    "name" : "jackson-databind",
+    "group" : "com.fasterxml.jackson.core",
+    "version" : "2.9.8",
+    "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
+    "latestVersion" : "2.18.3"
+  },
+  "vulnerability" : {
+    "uuid" : "76438adb-37f4-4faa-ba40-8d50d74150fe",
+    "source" : "NVD",
+    "vulnId" : "CVE-2020-25649",
+    "description" : "A flaw was found in FasterXML Jackson Databind, where it did not have entity expansion secured properly. This flaw allows vulnerability to XML external entity (XXE) attacks. The highest threat from this vulnerability is data integrity.",
+    "cvssV2BaseScore" : 5.0,
+    "cvssV3BaseScore" : 7.5,
+    "severity" : "HIGH",
+    "severityRank" : 1,
+    "epssScore" : 0.00247,
+    "epssPercentile" : 0.64483,
+    "cweId" : 611,
+    "cweName" : "Improper Restriction of XML External Entity Reference",
+    "cwes" : [ {
+      "cweId" : 611,
+      "name" : "Improper Restriction of XML External Entity Reference"
+    } ],
+    "aliases" : [ ]
+  },
+  "analysis" : {
+    "isSuppressed" : false
+  },
+  "attribution" : {
+    "analyzerIdentity" : "OSSINDEX_ANALYZER",
+    "attributedOn" : 1740938142952
+  },
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:0f59a266-6d6b-4f9c-95c7-4459400a861b:76438adb-37f4-4faa-ba40-8d50d74150fe"
+}, {
+  "component" : {
+    "uuid" : "0f59a266-6d6b-4f9c-95c7-4459400a861b",
+    "name" : "jackson-databind",
+    "group" : "com.fasterxml.jackson.core",
+    "version" : "2.9.8",
+    "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
+    "latestVersion" : "2.18.3"
+  },
+  "vulnerability" : {
+    "uuid" : "4e9e206b-09dc-4fe4-a050-fbdc2157d9cd",
+    "source" : "NVD",
+    "vulnId" : "CVE-2020-36518",
+    "description" : "jackson-databind before 2.13.0 allows a Java StackOverflow exception and denial of service via a large depth of nested objects.",
+    "cvssV2BaseScore" : 5.0,
+    "cvssV3BaseScore" : 7.5,
+    "severity" : "HIGH",
+    "severityRank" : 1,
+    "epssScore" : 0.00482,
+    "epssPercentile" : 0.76055,
+    "cweId" : 787,
+    "cweName" : "Out-of-bounds Write",
+    "cwes" : [ {
+      "cweId" : 787,
+      "name" : "Out-of-bounds Write"
+    } ],
+    "aliases" : [ ]
+  },
+  "analysis" : {
+    "isSuppressed" : false
+  },
+  "attribution" : {
+    "analyzerIdentity" : "OSSINDEX_ANALYZER",
+    "attributedOn" : 1740938142980
+  },
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:0f59a266-6d6b-4f9c-95c7-4459400a861b:4e9e206b-09dc-4fe4-a050-fbdc2157d9cd"
+}, {
+  "component" : {
+    "uuid" : "0f59a266-6d6b-4f9c-95c7-4459400a861b",
+    "name" : "jackson-databind",
+    "group" : "com.fasterxml.jackson.core",
+    "version" : "2.9.8",
+    "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
+    "latestVersion" : "2.18.3"
+  },
+  "vulnerability" : {
+    "uuid" : "a23e6840-59a6-4c5d-ade6-cf5a94abc8dc",
+    "source" : "NVD",
+    "vulnId" : "CVE-2022-42003",
+    "description" : "In FasterXML jackson-databind before versions 2.13.4.1 and 2.12.17.1, resource exhaustion can occur because of a lack of a check in primitive value deserializers to avoid deep wrapper array nesting, when the UNWRAP_SINGLE_VALUE_ARRAYS feature is enabled.",
+    "cvssV3BaseScore" : 7.5,
+    "severity" : "HIGH",
+    "severityRank" : 1,
+    "epssScore" : 0.0029,
+    "epssPercentile" : 0.69119,
+    "cweId" : 502,
+    "cweName" : "Deserialization of Untrusted Data",
+    "cwes" : [ {
+      "cweId" : 502,
+      "name" : "Deserialization of Untrusted Data"
+    } ],
+    "aliases" : [ ]
+  },
+  "analysis" : {
+    "isSuppressed" : false
+  },
+  "attribution" : {
+    "analyzerIdentity" : "OSSINDEX_ANALYZER",
+    "attributedOn" : 1740938143008
+  },
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:0f59a266-6d6b-4f9c-95c7-4459400a861b:a23e6840-59a6-4c5d-ade6-cf5a94abc8dc"
+}, {
+  "component" : {
+    "uuid" : "0f59a266-6d6b-4f9c-95c7-4459400a861b",
+    "name" : "jackson-databind",
+    "group" : "com.fasterxml.jackson.core",
+    "version" : "2.9.8",
+    "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
+    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
+    "latestVersion" : "2.18.3"
+  },
+  "vulnerability" : {
+    "uuid" : "19d58e24-80c2-4228-8785-8feb9efc3028",
+    "source" : "NVD",
+    "vulnId" : "CVE-2022-42004",
+    "description" : "In FasterXML jackson-databind before 2.13.4, resource exhaustion can occur because of a lack of a check in BeanDeserializer._deserializeFromArray to prevent use of deeply nested arrays. An application is vulnerable only with certain customized choices for deserialization.",
+    "cvssV3BaseScore" : 7.5,
+    "severity" : "HIGH",
+    "severityRank" : 1,
+    "epssScore" : 0.00289,
+    "epssPercentile" : 0.69082,
+    "cweId" : 502,
+    "cweName" : "Deserialization of Untrusted Data",
+    "cwes" : [ {
+      "cweId" : 502,
+      "name" : "Deserialization of Untrusted Data"
+    } ],
+    "aliases" : [ ]
+  },
+  "analysis" : {
+    "isSuppressed" : false
+  },
+  "attribution" : {
+    "analyzerIdentity" : "OSSINDEX_ANALYZER",
+    "attributedOn" : 1740938143036
+  },
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:0f59a266-6d6b-4f9c-95c7-4459400a861b:19d58e24-80c2-4228-8785-8feb9efc3028"
 } ]

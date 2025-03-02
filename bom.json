@@ -6,8 +6,15 @@
     {
       "group" : "org.springframework.boot",
       "name" : "spring-boot-starter-web",
-      "version" : "3.2.6",
-      "purl" : "pkg:maven/org.springframework.boot/spring-boot-starter-web@3.2.6",
+      "version" : "2.7.0",
+      "purl" : "pkg:maven/org.springframework.boot/spring-boot-starter-web@2.7.0",
+      "type" : "library"
+    },
+    {
+      "group" : "com.fasterxml.jackson.core",
+      "name" : "jackson-databind",
+      "version" : "2.9.8",
+      "purl" : "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.9.8",
       "type" : "library"
     },
     {
