@@ -71,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //generate sbom and fetch vulnerabilities
     listVulnerabilitiesBtn.addEventListener("click", async () => {
+        vulnerabilitiesList.innerHTML = "";
         loadingSpinner.style.display = "block";
         listVulnerabilitiesBtn.disabled = true;
         generateFeedbackBtn.disabled = true;
 
-        vulnerabilitiesList.innerHTML = "";
         try {
             const token = getToken();
             //generate SBOM
@@ -95,17 +95,24 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             if (!uploadSbomResponse.ok) throw new Error("Failed to upload SBOM");
 
+
+            //wait for dependency track to process the SBOM
+            await new Promise(resolve => setTimeout(resolve, 2000)); //2 seconds delay
+
             //fetch vulnerabilities from dependency track
             const vulnerabilitiesResponse = await fetch(`${CONFIG.BASE_URL}/track/getVulnerabilities?projectUuid=${CONFIG.projectUuid}`, {
                 headers: {
-                    "Authorization": `Bearer ${token}`
+                    "Authorization": `Bearer ${token}`, 
+                    "Cache-Control": "no-cache, no-store, must-revalidate",
+                    "Pragma": "no-cache",
+                    "Expires": "0"
                 }
             });
             if (!vulnerabilitiesResponse.ok) throw new Error("Failed to get vulnerabilities");
 
             //display the vulnerabilities
             const vulnerabilities = await vulnerabilitiesResponse.json();
-            displayVulnerabilities(vulnerabilities);
+            await displayVulnerabilities(vulnerabilities);
 
             loadingSpinner.style.display = "none";
             generateFeedbackBtn.disabled = false;
@@ -155,7 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    function displayVulnerabilities(vulnerabilities) {
+    async function displayVulnerabilities(vulnerabilities) {
+        console.log("display called");
+        console.log(vulnerabilities);
         const vulnerabilitiesList = document.getElementById("vulnerabilitiesList");
         vulnerabilitiesList.innerHTML = "";
 
