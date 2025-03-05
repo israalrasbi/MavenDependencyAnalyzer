@@ -4,6 +4,7 @@ import org.cyclonedx.BomGeneratorFactory;
 import org.cyclonedx.CycloneDxSchema;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,7 +20,7 @@ import org.cyclonedx.model.Component;
 public class SBOMGeneratorService {
     public String generateSBOM(String pomFilePath) throws IOException {
         try {
-            //read and parse the pom.xml
+            //read and parse pom.xml
             File pomFile = new File(pomFilePath);
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -33,27 +34,43 @@ public class SBOMGeneratorService {
 
             //loop through the dependencies
             for (int i = 0; i < dependencies.getLength(); i++) {
-                String groupId = dependencies.item(i).getChildNodes().item(1).getTextContent();
-                String artifactId = dependencies.item(i).getChildNodes().item(3).getTextContent();
-                String version = dependencies.item(i).getChildNodes().item(5).getTextContent();
+                Node depNode = dependencies.item(i);
+                NodeList depChildNodes = depNode.getChildNodes();
+
+                String groupId = "";
+                String artifactId = "";
+                String version = "";
+
+                //loop through the child nodes to find groupId, artifactId, and version
+                for (int j = 0; j < depChildNodes.getLength(); j++) {
+                    Node childNode = depChildNodes.item(j);
+                    if (childNode.getNodeName().equals("groupId")) {
+                        groupId = childNode.getTextContent();
+                    } else if (childNode.getNodeName().equals("artifactId")) {
+                        artifactId = childNode.getTextContent();
+                    } else if (childNode.getNodeName().equals("version")) {
+                        version = childNode.getTextContent();
+                    }
+                }
 
                 //create CycloneDX component
-                Component component = new Component();
-                component.setType(Component.Type.LIBRARY);
-                component.setGroup(groupId);
-                component.setName(artifactId);
-                component.setVersion(version);
-                component.setPurl("pkg:maven/" + groupId + "/" + artifactId + "@" + version);
+                if (!groupId.isEmpty() && !artifactId.isEmpty() && !version.isEmpty()) {
+                    Component component = new Component();
+                    component.setType(Component.Type.LIBRARY);
+                    component.setGroup(groupId);
+                    component.setName(artifactId);
+                    component.setVersion(version);
+                    component.setPurl("pkg:maven/" + groupId + "/" + artifactId + "@" + version);
 
-                //add component to BOM
-                bom.addComponent(component);
+                    //add component to bom
+                    bom.addComponent(component);
+                }
             }
 
-            //generate SBOM JSON
+            //generate sbom json
             BomJsonGenerator bomJsonGenerator = (BomJsonGenerator) BomGeneratorFactory.createJson(CycloneDxSchema.Version.VERSION_14, bom);
             String bomJson = bomJsonGenerator.toJsonString();
 
-            //save SBOM to a file, named bom.json
             File sbomFile = new File("bom.json");
             try (FileWriter writer = new FileWriter(sbomFile)) {
                 writer.write(bomJson);
