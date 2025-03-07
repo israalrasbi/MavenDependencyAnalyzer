@@ -1,22 +1,29 @@
 [ {
   "component" : {
-    "uuid" : "d8dfbaf0-dcaa-454f-b504-a3c171fc4f22",
-    "name" : "cyclonedx-core-java",
-    "group" : "org.cyclonedx",
-    "version" : "7.1.0",
-    "purl" : "pkg:maven/org.cyclonedx/cyclonedx-core-java@7.1.0",
+    "uuid" : "705107b0-cfb8-47ae-bf91-17b0988cdd2d",
+    "name" : "commons-text",
+    "group" : "org.apache.commons",
+    "version" : "1.5",
+    "purl" : "pkg:maven/org.apache.commons/commons-text@1.5",
     "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "10.1.0"
+    "latestVersion" : "1.13.0"
   },
   "vulnerability" : {
-    "uuid" : "b032a4de-b16b-431b-8072-9f0ae446c447",
+    "uuid" : "c5bde492-a926-4703-a10f-f6bbf2372251",
     "source" : "NVD",
-    "vulnId" : "CVE-2024-38374",
-    "description" : "The CycloneDX core module provides a model representation of the SBOM along with utilities to assist in creating, validating, and parsing SBOMs. Before deserializing CycloneDX Bill of Materials in XML format, _cyclonedx-core-java_ leverages XPath expressions to determine the schema version of the BOM. The `DocumentBuilderFactory` used to evaluate XPath expressions was not configured securely, making the library vulnerable to XML External Entity (XXE) injection. This vulnerability has been fixed in cyclonedx-core-java version 9.0.4.\n",
-    "severity" : "UNASSIGNED",
-    "severityRank" : 5,
-    "epssScore" : 4.9E-4,
-    "epssPercentile" : 0.21084,
+    "vulnId" : "CVE-2022-42889",
+    "description" : "Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is \"${prefix:name}\", where \"prefix\" is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. Starting with version 1.5 and continuing through 1.9, the set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are: - \"script\" - execute expressions using the JVM script execution engine (javax.script) - \"dns\" - resolve dns records - \"url\" - load values from urls, including from remote servers Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used. Users are recommended to upgrade to Apache Commons Text 1.10.0, which disables the problematic interpolators by default.",
+    "cvssV3BaseScore" : 9.8,
+    "severity" : "CRITICAL",
+    "severityRank" : 0,
+    "epssScore" : 0.97318,
+    "epssPercentile" : 0.99949,
+    "cweId" : 94,
+    "cweName" : "Improper Control of Generation of Code ('Code Injection')",
+    "cwes" : [ {
+      "cweId" : 94,
+      "name" : "Improper Control of Generation of Code ('Code Injection')"
+    } ],
     "aliases" : [ ]
   },
   "analysis" : {
@@ -24,36 +31,7 @@
   },
   "attribution" : {
     "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1741181678461
+    "attributedOn" : 1741374785262
   },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:d8dfbaf0-dcaa-454f-b504-a3c171fc4f22:b032a4de-b16b-431b-8072-9f0ae446c447"
-}, {
-  "component" : {
-    "uuid" : "e6810298-f37b-427a-af76-c4c504998c84",
-    "name" : "jjwt",
-    "group" : "io.jsonwebtoken",
-    "version" : "0.9.1",
-    "purl" : "pkg:maven/io.jsonwebtoken/jjwt@0.9.1",
-    "project" : "fb22ecce-5948-4299-8ab4-b3add3747d9a",
-    "latestVersion" : "0.12.6"
-  },
-  "vulnerability" : {
-    "uuid" : "95244eb8-f23c-4072-9158-b9c8db052c40",
-    "source" : "NVD",
-    "vulnId" : "CVE-2024-31033",
-    "description" : "JJWT (aka Java JWT) through 0.12.5 ignores certain characters and thus a user might falsely conclude that they have a strong key. The impacted code is the setSigningKey() method within the DefaultJwtParser class and the signWith() method within the DefaultJwtBuilder class. NOTE: the vendor disputes this because the \"ignores\" behavior cannot occur (in any version) unless there is a user error in how JJWT is used, and because the version that was actually tested must have been more than six years out of date.",
-    "severity" : "UNASSIGNED",
-    "severityRank" : 5,
-    "epssScore" : 4.5E-4,
-    "epssPercentile" : 0.18242,
-    "aliases" : [ ]
-  },
-  "analysis" : {
-    "isSuppressed" : false
-  },
-  "attribution" : {
-    "analyzerIdentity" : "OSSINDEX_ANALYZER",
-    "attributedOn" : 1741181678494
-  },
-  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:e6810298-f37b-427a-af76-c4c504998c84:95244eb8-f23c-4072-9158-b9c8db052c40"
+  "matrix" : "fb22ecce-5948-4299-8ab4-b3add3747d9a:705107b0-cfb8-47ae-bf91-17b0988cdd2d:c5bde492-a926-4703-a10f-f6bbf2372251"
 } ]
